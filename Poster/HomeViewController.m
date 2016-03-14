@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "PostPresentView.h"
 
 @interface HomeViewController ()
 
@@ -14,8 +15,11 @@
 
 @implementation HomeViewController
 
+static NSString *const CELL_HEADER = @"PostPresentView";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_tableView registerNib:[UINib nibWithNibName:@"PostPresentView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
     // Do any additional setup after loading the view.
 }
 
@@ -24,14 +28,48 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Table view data source
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_HEADER];
+    
+    PostPresentView *postCell = (PostPresentView *)cell;
+    
+    return postCell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_HEADER];
+    return cell.frame.size.height;
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    return 1;
+}
+
+
 
 @end

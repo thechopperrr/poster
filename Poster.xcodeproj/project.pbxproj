@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		689C77941C95704300BC0D26 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77931C95704300BC0D26 /* HomeViewController.m */; };
 		689C77981C96A3D900BC0D26 /* PostPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77971C96A3D900BC0D26 /* PostPresentView.m */; };
+		689C779A1C96A67400BC0D26 /* PostPresentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689C77991C96A67400BC0D26 /* PostPresentView.xib */; };
 		68E9BAD41C956D0A00042DFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD31C956D0A00042DFD /* main.m */; };
 		68E9BAD71C956D0A00042DFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD61C956D0A00042DFD /* AppDelegate.m */; };
 		68E9BADA1C956D0A00042DFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD91C956D0A00042DFD /* ViewController.m */; };
@@ -23,6 +24,7 @@
 		689C77931C95704300BC0D26 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		689C77961C96A3D900BC0D26 /* PostPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostPresentView.h; sourceTree = "<group>"; };
 		689C77971C96A3D900BC0D26 /* PostPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostPresentView.m; sourceTree = "<group>"; };
+		689C77991C96A67400BC0D26 /* PostPresentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostPresentView.xib; sourceTree = "<group>"; };
 		68E9BACF1C956D0A00042DFD /* Poster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E9BAD31C956D0A00042DFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68E9BAD51C956D0A00042DFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				68E9BAD51C956D0A00042DFD /* AppDelegate.h */,
 				68E9BAD61C956D0A00042DFD /* AppDelegate.m */,
+				689C77991C96A67400BC0D26 /* PostPresentView.xib */,
 				689C77961C96A3D900BC0D26 /* PostPresentView.h */,
 				689C77971C96A3D900BC0D26 /* PostPresentView.m */,
 				689C77921C95704300BC0D26 /* HomeViewController.h */,
@@ -151,6 +154,7 @@
 			files = (
 				68E9BAE51C956D0A00042DFD /* LaunchScreen.storyboard in Resources */,
 				68E9BAE21C956D0A00042DFD /* Assets.xcassets in Resources */,
+				689C779A1C96A67400BC0D26 /* PostPresentView.xib in Resources */,
 				68E9BADD1C956D0A00042DFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

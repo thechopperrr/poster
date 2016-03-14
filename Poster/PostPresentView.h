@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PostPresentView : UIView
+@interface PostPresentView : UITableViewCell
 
 @end

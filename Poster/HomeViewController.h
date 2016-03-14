@@ -9,5 +9,6 @@
 #import "ViewController.h"
 
 @interface HomeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
