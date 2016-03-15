@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "PostPresentView.h"
+#import "PostCellView.h"
 
 @interface HomeViewController ()
 
@@ -15,11 +15,11 @@
 
 @implementation HomeViewController
 
-static NSString *const CELL_HEADER = @"PostPresentView";
+static NSString *const CELL_HEADER = @"PostCellView";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_tableView registerNib:[UINib nibWithNibName:@"PostPresentView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
+    [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
     // Do any additional setup after loading the view.
 }
 
@@ -45,7 +45,7 @@ static NSString *const CELL_HEADER = @"PostPresentView";
 {
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_HEADER];
     
-    PostPresentView *postCell = (PostPresentView *)cell;
+    PostCellView *postCell = (PostCellView *)cell;
     
     return postCell;
 }

@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		689C77941C95704300BC0D26 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77931C95704300BC0D26 /* HomeViewController.m */; };
-		689C77981C96A3D900BC0D26 /* PostPresentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77971C96A3D900BC0D26 /* PostPresentView.m */; };
-		689C779A1C96A67400BC0D26 /* PostPresentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689C77991C96A67400BC0D26 /* PostPresentView.xib */; };
+		689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77971C96A3D900BC0D26 /* PostCellView.m */; };
+		689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689C77991C96A67400BC0D26 /* PostCellView.xib */; };
+		68DF662A1C9803C900245D56 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF66291C9803C900245D56 /* User.m */; };
+		68DF662D1C9804C300245D56 /* Coment.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF662C1C9804C300245D56 /* Coment.m */; };
+		68DF66301C98067800245D56 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF662F1C98067800245D56 /* Post.m */; };
 		68E9BAD41C956D0A00042DFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD31C956D0A00042DFD /* main.m */; };
 		68E9BAD71C956D0A00042DFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD61C956D0A00042DFD /* AppDelegate.m */; };
 		68E9BADA1C956D0A00042DFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD91C956D0A00042DFD /* ViewController.m */; };
@@ -22,9 +25,15 @@
 /* Begin PBXFileReference section */
 		689C77921C95704300BC0D26 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		689C77931C95704300BC0D26 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		689C77961C96A3D900BC0D26 /* PostPresentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostPresentView.h; sourceTree = "<group>"; };
-		689C77971C96A3D900BC0D26 /* PostPresentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostPresentView.m; sourceTree = "<group>"; };
-		689C77991C96A67400BC0D26 /* PostPresentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostPresentView.xib; sourceTree = "<group>"; };
+		689C77961C96A3D900BC0D26 /* PostCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCellView.h; sourceTree = "<group>"; };
+		689C77971C96A3D900BC0D26 /* PostCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCellView.m; sourceTree = "<group>"; };
+		689C77991C96A67400BC0D26 /* PostCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCellView.xib; sourceTree = "<group>"; };
+		68DF66281C9803C900245D56 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		68DF66291C9803C900245D56 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		68DF662B1C9804C300245D56 /* Coment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coment.h; sourceTree = "<group>"; };
+		68DF662C1C9804C300245D56 /* Coment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coment.m; sourceTree = "<group>"; };
+		68DF662E1C98067800245D56 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		68DF662F1C98067800245D56 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		68E9BACF1C956D0A00042DFD /* Poster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E9BAD31C956D0A00042DFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68E9BAD51C956D0A00042DFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,6 +58,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68DF66271C9803B200245D56 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				68DF66281C9803C900245D56 /* User.h */,
+				68DF662E1C98067800245D56 /* Post.h */,
+				68DF662F1C98067800245D56 /* Post.m */,
+				68DF66291C9803C900245D56 /* User.m */,
+				68DF662B1C9804C300245D56 /* Coment.h */,
+				68DF662C1C9804C300245D56 /* Coment.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		68E9BAC61C956D0A00042DFD = {
 			isa = PBXGroup;
 			children = (
@@ -68,11 +90,12 @@
 		68E9BAD11C956D0A00042DFD /* Poster */ = {
 			isa = PBXGroup;
 			children = (
+				68DF66271C9803B200245D56 /* model */,
 				68E9BAD51C956D0A00042DFD /* AppDelegate.h */,
 				68E9BAD61C956D0A00042DFD /* AppDelegate.m */,
-				689C77991C96A67400BC0D26 /* PostPresentView.xib */,
-				689C77961C96A3D900BC0D26 /* PostPresentView.h */,
-				689C77971C96A3D900BC0D26 /* PostPresentView.m */,
+				689C77991C96A67400BC0D26 /* PostCellView.xib */,
+				689C77961C96A3D900BC0D26 /* PostCellView.h */,
+				689C77971C96A3D900BC0D26 /* PostCellView.m */,
 				689C77921C95704300BC0D26 /* HomeViewController.h */,
 				689C77931C95704300BC0D26 /* HomeViewController.m */,
 				68E9BAD81C956D0A00042DFD /* ViewController.h */,
@@ -154,7 +177,7 @@
 			files = (
 				68E9BAE51C956D0A00042DFD /* LaunchScreen.storyboard in Resources */,
 				68E9BAE21C956D0A00042DFD /* Assets.xcassets in Resources */,
-				689C779A1C96A67400BC0D26 /* PostPresentView.xib in Resources */,
+				689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */,
 				68E9BADD1C956D0A00042DFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,8 +190,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E9BAE01C956D0A00042DFD /* Poster.xcdatamodeld in Sources */,
+				68DF662D1C9804C300245D56 /* Coment.m in Sources */,
+				68DF662A1C9803C900245D56 /* User.m in Sources */,
 				68E9BADA1C956D0A00042DFD /* ViewController.m in Sources */,
-				689C77981C96A3D900BC0D26 /* PostPresentView.m in Sources */,
+				68DF66301C98067800245D56 /* Post.m in Sources */,
+				689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */,
 				68E9BAD71C956D0A00042DFD /* AppDelegate.m in Sources */,
 				689C77941C95704300BC0D26 /* HomeViewController.m in Sources */,
 				68E9BAD41C956D0A00042DFD /* main.m in Sources */,
