@@ -46,13 +46,14 @@ static NSString *const CELL_HEADER = @"PostCellView";
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_HEADER];
     
     PostCellView *postCell = (PostCellView *)cell;
-    
+    postCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    postCell.view.userInteractionEnabled = YES;
     return postCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+   // [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     }
 
