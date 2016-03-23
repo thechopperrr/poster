@@ -6,9 +6,13 @@
 //  Copyright © 2016 com.omg-m. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
+#import "PostCellView.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <PostCellViewProtocol>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+//temporary
+@property NSArray* posts;
 
 @end

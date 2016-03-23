@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "PostCellView.h"
+#import "ComentsViewController.h"
 
 @interface HomeViewController ()
 
@@ -20,7 +20,62 @@ static NSString *const CELL_HEADER = @"PostCellView";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
+    _posts = [self createPosts];
     // Do any additional setup after loading the view.
+}
+
+- (NSArray*)createPosts {
+    NSMutableArray* posts = [[NSMutableArray alloc]init];
+    
+    User* usr1 = [[User alloc]init];
+    usr1.email = @"hose@abv.bg";
+    usr1.pass = @"123";
+    
+    Post* post1 = [[Post alloc]init];
+    post1.user = usr1;
+    post1.postText = @"Az ne sym debel i grozen";
+    post1.likes = 1;
+    post1.date = [NSDate date];
+    NSMutableArray* coments1 = [[NSMutableArray alloc]init];
+    Coment* coment1 = [[Coment alloc]init];
+    coment1.userMail = @"karimir@abv.bg";
+    coment1.comentText = @"ne lyji kiufte";
+    coment1.date = [NSDate date];
+    [coments1 addObject:coment1];
+    Coment* coment2 = [[Coment alloc]init];
+    coment2.userMail = @"konsunela@abv.bg";
+    coment2.comentText = @"kiuftetata nqmat brada";
+    coment2.date = [NSDate date];
+    [coments1 addObject:coment2];
+    post1.coments = coments1;
+    [posts addObject:post1];
+    
+    User* usr2 = [[User alloc]init];
+    usr2.email = @"konsunela@abv.bg";
+    usr2.pass = @"123";
+    
+    Post* post2 = [[Post alloc]init];
+    post2.user = usr2;
+    post2.postText = @"koga 6te ima pari we";
+    post2.likes = 3;
+    post2.date = [NSDate date];
+    NSMutableArray* coments2 = [[NSMutableArray alloc]init];
+    Coment* coment3 = [[Coment alloc]init];
+    coment3.userMail = @"baubau@abv.bg";
+    coment3.comentText = @"ne ste gi zalujili";
+    coment3.date = [NSDate date];
+    [coments2 addObject:coment3];
+    Coment* coment4 = [[Coment alloc]init];
+    coment4.userMail = @"okoto@abv.bg";
+    coment4.comentText = @"mqu";
+    coment4.date = [NSDate date];
+    [coments2 addObject:coment4];
+    post2.coments = coments2;
+    [posts addObject:post2];
+    
+    
+    return posts;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,16 +93,22 @@ static NSString *const CELL_HEADER = @"PostCellView";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 1;
+    return _posts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+        return  [self postCellForPost:_posts[indexPath.row]];
+}
+
+- (PostCellView*)postCellForPost:(Post*)post{
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_HEADER];
     
     PostCellView *postCell = (PostCellView *)cell;
     postCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    postCell.view.userInteractionEnabled = YES;
+    postCell.delegate = self;
+    postCell.post = post;
     return postCell;
 }
 
@@ -71,6 +132,13 @@ static NSString *const CELL_HEADER = @"PostCellView";
     return 1;
 }
 
+// delegates
 
+- (void)openComentsWithPost:(Post *)post{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    ComentsViewController *controller = (ComentsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"ComentsViewController"];
+    controller.post = post;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 @end

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
 
-@interface ViewController : UIViewController
+@interface LoginViewController : UIViewController
 
 
 @end

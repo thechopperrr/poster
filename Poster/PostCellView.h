@@ -11,20 +11,24 @@
 
 @protocol PostCellViewProtocol <NSObject>
 
-- (void)aRequiredMethod;
+- (void)openComentsWithPost:(Post*)post;
 
 @end
 
 @interface PostCellView : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *testbutt;
+- (IBAction)testButtAction:(id)sender;
 @property Post* post;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-@property (weak, nonatomic) IBOutlet UILabel *postText;
+@property (weak, nonatomic) IBOutlet UITextView *comentTextView;
+
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *comentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *comentsCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *comentsButton;
+
 
 @property (nonatomic, weak) id<PostCellViewProtocol> delegate;
 

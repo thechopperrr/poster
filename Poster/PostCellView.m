@@ -1,3 +1,4 @@
+
 //
 //  PostPresentView.m
 //  Poster
@@ -9,6 +10,8 @@
 #import "PostCellView.h"
 
 @implementation PostCellView
+- (IBAction)cmtBtn:(id)sender {
+}
 
 - (void)layoutSubviews
 {
@@ -18,13 +21,20 @@
 
 - (void)setUp{
     [_userLabel setText:_post.user.email];
-    [_postText setText:_post.postText];
+    [_comentTextView setText:_post.postText];
     [_likesLabel setText:[NSString stringWithFormat:@"%d", _post.likes]];
     [_comentsCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_post.coments.count]];
 }
 - (IBAction)likeButtonPressed:(id)sender {
+    //todo
+    //send like request, like in app when reciewe + responce
 }
 - (IBAction)shareButtonPressed:(id)sender {
+    //open share vc in social media 
 }
 
+
+- (IBAction)testButtAction:(id)sender {
+    [_delegate openComentsWithPost:_post];
+}
 @end

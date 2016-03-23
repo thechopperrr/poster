@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */; };
+		6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */; };
 		689C77941C95704300BC0D26 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77931C95704300BC0D26 /* HomeViewController.m */; };
 		689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77971C96A3D900BC0D26 /* PostCellView.m */; };
 		689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689C77991C96A67400BC0D26 /* PostCellView.xib */; };
 		68DF662A1C9803C900245D56 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF66291C9803C900245D56 /* User.m */; };
 		68DF662D1C9804C300245D56 /* Coment.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF662C1C9804C300245D56 /* Coment.m */; };
 		68DF66301C98067800245D56 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF662F1C98067800245D56 /* Post.m */; };
+		68DF66331C99A25900245D56 /* ComentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DF66321C99A25900245D56 /* ComentsViewController.m */; };
 		68E9BAD41C956D0A00042DFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD31C956D0A00042DFD /* main.m */; };
 		68E9BAD71C956D0A00042DFD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD61C956D0A00042DFD /* AppDelegate.m */; };
-		68E9BADA1C956D0A00042DFD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD91C956D0A00042DFD /* ViewController.m */; };
+		68E9BADA1C956D0A00042DFD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BAD91C956D0A00042DFD /* LoginViewController.m */; };
 		68E9BADD1C956D0A00042DFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68E9BADB1C956D0A00042DFD /* Main.storyboard */; };
 		68E9BAE01C956D0A00042DFD /* Poster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68E9BADE1C956D0A00042DFD /* Poster.xcdatamodeld */; };
 		68E9BAE21C956D0A00042DFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68E9BAE11C956D0A00042DFD /* Assets.xcassets */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6873B92B1C9DAD51006AEFD4 /* ComentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComentCellView.h; sourceTree = "<group>"; };
+		6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComentCellView.m; sourceTree = "<group>"; };
+		6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComentCellView.xib; sourceTree = "<group>"; };
 		689C77921C95704300BC0D26 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		689C77931C95704300BC0D26 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		689C77961C96A3D900BC0D26 /* PostCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCellView.h; sourceTree = "<group>"; };
@@ -34,12 +40,14 @@
 		68DF662C1C9804C300245D56 /* Coment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coment.m; sourceTree = "<group>"; };
 		68DF662E1C98067800245D56 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		68DF662F1C98067800245D56 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		68DF66311C99A25900245D56 /* ComentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComentsViewController.h; sourceTree = "<group>"; };
+		68DF66321C99A25900245D56 /* ComentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComentsViewController.m; sourceTree = "<group>"; };
 		68E9BACF1C956D0A00042DFD /* Poster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68E9BAD31C956D0A00042DFD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		68E9BAD51C956D0A00042DFD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		68E9BAD61C956D0A00042DFD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		68E9BAD81C956D0A00042DFD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		68E9BAD91C956D0A00042DFD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		68E9BAD81C956D0A00042DFD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		68E9BAD91C956D0A00042DFD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		68E9BADC1C956D0A00042DFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68E9BADF1C956D0A00042DFD /* Poster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Poster.xcdatamodel; sourceTree = "<group>"; };
 		68E9BAE11C956D0A00042DFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +66,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6873B92A1C9DAD16006AEFD4 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				689C77991C96A67400BC0D26 /* PostCellView.xib */,
+				689C77961C96A3D900BC0D26 /* PostCellView.h */,
+				689C77971C96A3D900BC0D26 /* PostCellView.m */,
+				6873B92B1C9DAD51006AEFD4 /* ComentCellView.h */,
+				6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */,
+				6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
 		68DF66271C9803B200245D56 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,14 +113,14 @@
 			children = (
 				68DF66271C9803B200245D56 /* model */,
 				68E9BAD51C956D0A00042DFD /* AppDelegate.h */,
+				6873B92A1C9DAD16006AEFD4 /* cells */,
 				68E9BAD61C956D0A00042DFD /* AppDelegate.m */,
-				689C77991C96A67400BC0D26 /* PostCellView.xib */,
-				689C77961C96A3D900BC0D26 /* PostCellView.h */,
-				689C77971C96A3D900BC0D26 /* PostCellView.m */,
+				68DF66311C99A25900245D56 /* ComentsViewController.h */,
+				68DF66321C99A25900245D56 /* ComentsViewController.m */,
 				689C77921C95704300BC0D26 /* HomeViewController.h */,
 				689C77931C95704300BC0D26 /* HomeViewController.m */,
-				68E9BAD81C956D0A00042DFD /* ViewController.h */,
-				68E9BAD91C956D0A00042DFD /* ViewController.m */,
+				68E9BAD81C956D0A00042DFD /* LoginViewController.h */,
+				68E9BAD91C956D0A00042DFD /* LoginViewController.m */,
 				68E9BADB1C956D0A00042DFD /* Main.storyboard */,
 				68E9BAE11C956D0A00042DFD /* Assets.xcassets */,
 				68E9BAE31C956D0A00042DFD /* LaunchScreen.storyboard */,
@@ -176,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E9BAE51C956D0A00042DFD /* LaunchScreen.storyboard in Resources */,
+				6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */,
 				68E9BAE21C956D0A00042DFD /* Assets.xcassets in Resources */,
 				689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */,
 				68E9BADD1C956D0A00042DFD /* Main.storyboard in Resources */,
@@ -189,15 +211,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68DF66331C99A25900245D56 /* ComentsViewController.m in Sources */,
 				68E9BAE01C956D0A00042DFD /* Poster.xcdatamodeld in Sources */,
 				68DF662D1C9804C300245D56 /* Coment.m in Sources */,
 				68DF662A1C9803C900245D56 /* User.m in Sources */,
-				68E9BADA1C956D0A00042DFD /* ViewController.m in Sources */,
+				68E9BADA1C956D0A00042DFD /* LoginViewController.m in Sources */,
 				68DF66301C98067800245D56 /* Post.m in Sources */,
 				689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */,
 				68E9BAD71C956D0A00042DFD /* AppDelegate.m in Sources */,
 				689C77941C95704300BC0D26 /* HomeViewController.m in Sources */,
 				68E9BAD41C956D0A00042DFD /* main.m in Sources */,
+				6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
