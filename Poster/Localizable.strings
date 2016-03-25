@@ -1,0 +1,8 @@
+"wrong_cred" = "Wrong username or password";
+"wrong_reg_input" = "Wrong data";
+"user_exist_error" = "User with this email exist";
+"user_successfully_register" = "User successfully registrated";
+"user_unsuccessfully_register" = "Somethig went wrong";
+"password_sent_error" = "Somethig went wrong";
+"password_sent" = "Pasword sent to your email";
+"user_no_exist_error" = "User with this email doesn't exist";

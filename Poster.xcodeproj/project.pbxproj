@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */; };
 		6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */; };
+		6873B94D1CA3D7A0006AEFD4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */; };
+		6873B9501CA425E8006AEFD4 /* Requester.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B94F1CA425E8006AEFD4 /* Requester.m */; };
+		6873B9531CA535D9006AEFD4 /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B9521CA535D9006AEFD4 /* URLHelper.m */; };
+		6873B9551CA53C14006AEFD4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6873B9541CA53C14006AEFD4 /* Localizable.strings */; };
 		689C77941C95704300BC0D26 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77931C95704300BC0D26 /* HomeViewController.m */; };
 		689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77971C96A3D900BC0D26 /* PostCellView.m */; };
 		689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689C77991C96A67400BC0D26 /* PostCellView.xib */; };
@@ -29,6 +33,13 @@
 		6873B92B1C9DAD51006AEFD4 /* ComentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComentCellView.h; sourceTree = "<group>"; };
 		6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComentCellView.m; sourceTree = "<group>"; };
 		6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComentCellView.xib; sourceTree = "<group>"; };
+		6873B94B1CA3D7A0006AEFD4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
+		6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
+		6873B94E1CA425E8006AEFD4 /* Requester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Requester.h; sourceTree = "<group>"; };
+		6873B94F1CA425E8006AEFD4 /* Requester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Requester.m; sourceTree = "<group>"; };
+		6873B9511CA535D9006AEFD4 /* URLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHelper.h; sourceTree = "<group>"; };
+		6873B9521CA535D9006AEFD4 /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
+		6873B9541CA53C14006AEFD4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		689C77921C95704300BC0D26 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		689C77931C95704300BC0D26 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		689C77961C96A3D900BC0D26 /* PostCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCellView.h; sourceTree = "<group>"; };
@@ -88,6 +99,8 @@
 				68DF66291C9803C900245D56 /* User.m */,
 				68DF662B1C9804C300245D56 /* Coment.h */,
 				68DF662C1C9804C300245D56 /* Coment.m */,
+				6873B9511CA535D9006AEFD4 /* URLHelper.h */,
+				6873B9521CA535D9006AEFD4 /* URLHelper.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -113,16 +126,21 @@
 			children = (
 				68DF66271C9803B200245D56 /* model */,
 				68E9BAD51C956D0A00042DFD /* AppDelegate.h */,
-				6873B92A1C9DAD16006AEFD4 /* cells */,
 				68E9BAD61C956D0A00042DFD /* AppDelegate.m */,
+				6873B92A1C9DAD16006AEFD4 /* cells */,
+				6873B94B1CA3D7A0006AEFD4 /* RegisterViewController.h */,
+				6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */,
 				68DF66311C99A25900245D56 /* ComentsViewController.h */,
 				68DF66321C99A25900245D56 /* ComentsViewController.m */,
+				6873B94E1CA425E8006AEFD4 /* Requester.h */,
+				6873B94F1CA425E8006AEFD4 /* Requester.m */,
 				689C77921C95704300BC0D26 /* HomeViewController.h */,
 				689C77931C95704300BC0D26 /* HomeViewController.m */,
 				68E9BAD81C956D0A00042DFD /* LoginViewController.h */,
 				68E9BAD91C956D0A00042DFD /* LoginViewController.m */,
 				68E9BADB1C956D0A00042DFD /* Main.storyboard */,
 				68E9BAE11C956D0A00042DFD /* Assets.xcassets */,
+				6873B9541CA53C14006AEFD4 /* Localizable.strings */,
 				68E9BAE31C956D0A00042DFD /* LaunchScreen.storyboard */,
 				68E9BAE61C956D0A00042DFD /* Info.plist */,
 				68E9BADE1C956D0A00042DFD /* Poster.xcdatamodeld */,
@@ -197,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68E9BAE51C956D0A00042DFD /* LaunchScreen.storyboard in Resources */,
+				6873B9551CA53C14006AEFD4 /* Localizable.strings in Resources */,
 				6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */,
 				68E9BAE21C956D0A00042DFD /* Assets.xcassets in Resources */,
 				689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */,
@@ -215,13 +234,16 @@
 				68E9BAE01C956D0A00042DFD /* Poster.xcdatamodeld in Sources */,
 				68DF662D1C9804C300245D56 /* Coment.m in Sources */,
 				68DF662A1C9803C900245D56 /* User.m in Sources */,
+				6873B9501CA425E8006AEFD4 /* Requester.m in Sources */,
 				68E9BADA1C956D0A00042DFD /* LoginViewController.m in Sources */,
 				68DF66301C98067800245D56 /* Post.m in Sources */,
 				689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */,
+				6873B94D1CA3D7A0006AEFD4 /* RegisterViewController.m in Sources */,
 				68E9BAD71C956D0A00042DFD /* AppDelegate.m in Sources */,
 				689C77941C95704300BC0D26 /* HomeViewController.m in Sources */,
 				68E9BAD41C956D0A00042DFD /* main.m in Sources */,
 				6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */,
+				6873B9531CA535D9006AEFD4 /* URLHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

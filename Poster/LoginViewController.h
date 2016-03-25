@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
+#import "Requester.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<RequesterDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passTextField;
 
 
 @end
