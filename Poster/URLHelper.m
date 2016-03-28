@@ -27,6 +27,9 @@
         case ResourceTypeForgetPassword:
             return @"http://localhost:8080/RestApi/auth/forgetPass";
             break;
+        case ResourceTypeNextFive:
+            return @"http://localhost:8080/RestApi/auth/nextFive";
+            break;
             
         default:
             return Nil;

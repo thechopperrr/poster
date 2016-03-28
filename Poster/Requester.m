@@ -7,6 +7,7 @@
 //
 
 #import "Requester.h"
+#import "Serialization.h"
 
 
 
@@ -17,29 +18,33 @@
 - (void)verifyUser:(User*)user{
     NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
     NSString* path = [URLHelper pathForResource:ResourceTypeUserValication];
-    [self createRequest:jsonUser andPath:path];
+    [self createRequest:jsonUser andPath:path json:YES];
 }
 
 - (void)registerUser:(User*)user{
     NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
     NSString* path = [URLHelper pathForResource:ResourceTypeUserRegistration];
-    [self createRequest:jsonUser andPath:path];
+    [self createRequest:jsonUser andPath:path json:YES];
 }
 
 - (void)isSuchUser:(User*)user{
     NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
     NSString* path = [URLHelper pathForResource:ResourceTypeisSuchUser];
-    [self createRequest:jsonUser andPath:path];
+    [self createRequest:jsonUser andPath:path json:YES];
 }
 
 - (void)forgetPass:(User*)user{
     NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
     NSString* path = [URLHelper pathForResource:ResourceTypeForgetPassword];
-    [self createRequest:jsonUser andPath:path];
+    [self createRequest:jsonUser andPath:path json:YES];
 }
 
+- (void)getNextFive:(int)start{
+    NSString* path = [URLHelper pathForResource:ResourceTypeNextFive];
+    [self createRequest:@"0" andPath:path json:NO];
+}
 
--(void)createRequest: (NSString*)value andPath:(NSString*) path
+-(void)createRequest: (NSString*)value andPath:(NSString*) path json:(bool)yes
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:path]];
     
@@ -49,7 +54,10 @@
     NSData *postData = [value dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
-    [request setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    if(yes)
+        [request setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    else
+        [request setValue:@"text/plain; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
     
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -93,6 +101,10 @@
             [_delegate passwordSent:YES];
         else
             [_delegate passwordSent:NO];
+    }
+    
+    if([url isEqualToString:[URLHelper pathForResource:ResourceTypeNextFive]]){
+        NSArray* posts = [Serialization jsonToPostArray:responseString];
     }
 
     

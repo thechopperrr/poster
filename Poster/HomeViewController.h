@@ -8,8 +8,9 @@
 
 #import "LoginViewController.h"
 #import "PostCellView.h"
+#import "Requester.h"
 
-@interface HomeViewController : UIViewController <PostCellViewProtocol>
+@interface HomeViewController : UIViewController <PostCellViewProtocol, RequesterDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 //temporary

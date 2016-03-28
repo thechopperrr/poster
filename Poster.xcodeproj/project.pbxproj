@@ -13,6 +13,7 @@
 		6873B9501CA425E8006AEFD4 /* Requester.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B94F1CA425E8006AEFD4 /* Requester.m */; };
 		6873B9531CA535D9006AEFD4 /* URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B9521CA535D9006AEFD4 /* URLHelper.m */; };
 		6873B9551CA53C14006AEFD4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6873B9541CA53C14006AEFD4 /* Localizable.strings */; };
+		6873B9581CA91DB0006AEFD4 /* Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B9571CA91DB0006AEFD4 /* Serialization.m */; };
 		689C77941C95704300BC0D26 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77931C95704300BC0D26 /* HomeViewController.m */; };
 		689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689C77971C96A3D900BC0D26 /* PostCellView.m */; };
 		689C779A1C96A67400BC0D26 /* PostCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689C77991C96A67400BC0D26 /* PostCellView.xib */; };
@@ -40,6 +41,8 @@
 		6873B9511CA535D9006AEFD4 /* URLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHelper.h; sourceTree = "<group>"; };
 		6873B9521CA535D9006AEFD4 /* URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelper.m; sourceTree = "<group>"; };
 		6873B9541CA53C14006AEFD4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6873B9561CA91DB0006AEFD4 /* Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serialization.h; sourceTree = "<group>"; };
+		6873B9571CA91DB0006AEFD4 /* Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serialization.m; sourceTree = "<group>"; };
 		689C77921C95704300BC0D26 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		689C77931C95704300BC0D26 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		689C77961C96A3D900BC0D26 /* PostCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCellView.h; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 				68DF662C1C9804C300245D56 /* Coment.m */,
 				6873B9511CA535D9006AEFD4 /* URLHelper.h */,
 				6873B9521CA535D9006AEFD4 /* URLHelper.m */,
+				6873B9561CA91DB0006AEFD4 /* Serialization.h */,
+				6873B9571CA91DB0006AEFD4 /* Serialization.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				68DF662D1C9804C300245D56 /* Coment.m in Sources */,
 				68DF662A1C9803C900245D56 /* User.m in Sources */,
 				6873B9501CA425E8006AEFD4 /* Requester.m in Sources */,
+				6873B9581CA91DB0006AEFD4 /* Serialization.m in Sources */,
 				68E9BADA1C956D0A00042DFD /* LoginViewController.m in Sources */,
 				68DF66301C98067800245D56 /* Post.m in Sources */,
 				689C77981C96A3D900BC0D26 /* PostCellView.m in Sources */,

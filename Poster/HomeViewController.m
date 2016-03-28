@@ -21,6 +21,10 @@ static NSString *const CELL_HEADER = @"PostCellView";
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
     _posts = [self createPosts];
+    
+    Requester* req = [[Requester alloc]init];
+    [req getNextFive:0];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -34,7 +38,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
     Post* post1 = [[Post alloc]init];
     post1.user = usr1;
     post1.postText = @"Az ne sym debel i grozen";
-    post1.likes = 1;
+    post1.likes = Nil;
     post1.date = [NSDate date];
     NSMutableArray* coments1 = [[NSMutableArray alloc]init];
     Coment* coment1 = [[Coment alloc]init];
@@ -57,7 +61,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
     Post* post2 = [[Post alloc]init];
     post2.user = usr2;
     post2.postText = @"koga 6te ima pari we";
-    post2.likes = 3;
+    post2.likes = Nil;
     post2.date = [NSDate date];
     NSMutableArray* coments2 = [[NSMutableArray alloc]init];
     Coment* coment3 = [[Coment alloc]init];

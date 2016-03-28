@@ -16,6 +16,7 @@
 -(void)registrationWitStatus:(BOOL) yes;
 -(void)isSuchUserFetched:(BOOL) yes;
 - (void)passwordSent:(BOOL) yes;
+- (void)nextFiveFetched:(NSArray*)posts;
 
 @end
 
@@ -27,6 +28,7 @@
 - (void)isSuchUser:(User*)user;
 - (void)registerUser:(User*)user;
 - (void)forgetPass:(User*)user;
+- (void)getNextFive:(int)start;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

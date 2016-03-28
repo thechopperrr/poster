@@ -22,7 +22,7 @@
 - (void)setUp{
     [_userLabel setText:_post.user.email];
     [_comentTextView setText:_post.postText];
-    [_likesLabel setText:[NSString stringWithFormat:@"%d", _post.likes]];
+    [_likesLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_post.likes.count]];
     [_comentsCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_post.coments.count]];
 }
 - (IBAction)likeButtonPressed:(id)sender {
