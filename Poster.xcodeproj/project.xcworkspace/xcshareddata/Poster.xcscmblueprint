@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "752F1F497C0A094A5A15C524F36C6498574195D0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "752F1F497C0A094A5A15C524F36C6498574195D0" : 0,
+    "FA32AB3827330BB77AA5DC7E3ADAB93D58A67F21" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "32994EE0-87C6-4035-BAB9-DA6AEFB75EAA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "752F1F497C0A094A5A15C524F36C6498574195D0" : "Poster\/",
+    "FA32AB3827330BB77AA5DC7E3ADAB93D58A67F21" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Poster",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Poster.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thechopperrr\/poster.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "752F1F497C0A094A5A15C524F36C6498574195D0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/thechopperrr\/poster.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FA32AB3827330BB77AA5DC7E3ADAB93D58A67F21"
+    }
+  ]
+}

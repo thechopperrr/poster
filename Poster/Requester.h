@@ -17,6 +17,8 @@
 -(void)isSuchUserFetched:(BOOL) yes;
 - (void)passwordSent:(BOOL) yes;
 - (void)nextFiveFetched:(NSArray*)posts;
+- (void)postLiked:(BOOL) yes;
+- (void)postDisLiked:(BOOL) yes;
 
 @end
 
@@ -29,6 +31,8 @@
 - (void)registerUser:(User*)user;
 - (void)forgetPass:(User*)user;
 - (void)getNextFive:(int)start;
+- (void)likePostWithId:(long)postId andUser:(NSString*)user;
+- (void)disLikePostWithId:(long)postId andUser:(NSString*)user;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

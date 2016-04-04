@@ -33,11 +33,12 @@
         
         NSString* postText = [object objectForKey:@"postText"];
         NSString* postDate = [object objectForKey:@"postDate"];
-        NSArray* likes = [object objectForKey:@"likes"];
+        NSMutableArray* likes = [[NSMutableArray alloc]initWithArray:[object objectForKey:@"likes"]];
         
         
         Post* p = [[Post alloc]init];
         p.user = [[User alloc]init];
+        p.postId = [[object objectForKey:@"postId"] longLongValue];
         p.user.email = [user objectForKey:@"mail"];
         p.postText = postText;
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:([postDate longLongValue] / 1000.0)];

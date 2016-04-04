@@ -16,6 +16,8 @@ typedef NS_ENUM(NSInteger, ResourceType) {
     ResourceTypeUserRegistration,
     ResourceTypeForgetPassword,
     ResourceTypeNextFive,
+    ResourceTypeLikePost,
+    ResourceTypeDisLikePost,
 };
 
 + (NSString*)pathForResource:(ResourceType) type;

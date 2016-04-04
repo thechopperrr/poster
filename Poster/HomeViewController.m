@@ -18,14 +18,24 @@
 static NSString *const CELL_HEADER = @"PostCellView";
 
 - (void)viewDidLoad {
+    _posts = [[NSMutableArray alloc]init];
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
-    _posts = [self createPosts];
     
-    Requester* req = [[Requester alloc]init];
-    [req getNextFive:0];
+    _requester = [[Requester alloc]init];
+    _requester.delegate = self;
+    [_requester getNextFive:0];
+    _loading = YES;
     
     // Do any additional setup after loading the view.
+}
+
+- (void)nextFiveFetched:(NSArray *)posts{
+    _loading = NO;
+    for(int i =0; i<posts.count; i++){
+        [_posts addObject:posts[i]];
+    }
+    [_tableView reloadData];
 }
 
 - (NSArray*)createPosts {
@@ -143,6 +153,33 @@ static NSString *const CELL_HEADER = @"PostCellView";
     ComentsViewController *controller = (ComentsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"ComentsViewController"];
     controller.post = post;
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+    CGPoint offset = aScrollView.contentOffset;
+    CGRect bounds = aScrollView.bounds;
+    CGSize size = aScrollView.contentSize;
+    UIEdgeInsets inset = aScrollView.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float h = size.height;
+    // NSLog(@"offset: %f", offset.y);
+    // NSLog(@"content.height: %f", size.height);
+    // NSLog(@"bounds.height: %f", bounds.size.height);
+    // NSLog(@"inset.top: %f", inset.top);
+    // NSLog(@"inset.bottom: %f", inset.bottom);
+    // NSLog(@"pos: %f of %f", y, h);
+    
+    float reload_distance = 10;
+    if(y > h + reload_distance) {
+        if( ! _loading){
+            _loading = YES;
+            NSLog(@"load more rows");
+            int i = (int)_posts.count;
+            [_requester getNextFive:i];
+        }
+        
+        
+    }
 }
 
 @end

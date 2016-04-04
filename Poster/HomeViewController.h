@@ -12,8 +12,9 @@
 
 @interface HomeViewController : UIViewController <PostCellViewProtocol, RequesterDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray* posts;
+@property bool loading;
+@property Requester* requester;
 
-//temporary
-@property NSArray* posts;
 
 @end

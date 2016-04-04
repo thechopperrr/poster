@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "Requester.h"
 
 @protocol PostCellViewProtocol <NSObject>
 
@@ -15,7 +16,7 @@
 
 @end
 
-@interface PostCellView : UITableViewCell
+@interface PostCellView : UITableViewCell <RequesterDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *testbutt;
 - (IBAction)testButtAction:(id)sender;
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *comentsCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *comentsButton;
+@property Requester* requester;
 
 
 @property (nonatomic, weak) id<PostCellViewProtocol> delegate;

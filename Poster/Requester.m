@@ -41,8 +41,28 @@
 
 - (void)getNextFive:(int)start{
     NSString* path = [URLHelper pathForResource:ResourceTypeNextFive];
-    [self createRequest:@"0" andPath:path json:NO];
+    [self createRequest:[NSString stringWithFormat:@"%d",start] andPath:path json:NO];
 }
+
+- (void)likePostWithId:(long)postId andUser:(NSString*)user{
+    NSString* path = [URLHelper pathForResource:ResourceTypeLikePost];
+    NSString *fullPath = [NSString stringWithFormat:@"%@?postId=%ld&userMail=%@", path, postId, user];
+    [self sendGetRequest:fullPath];
+}
+
+- (void)disLikePostWithId:(long)postId andUser:(NSString*)user{
+    NSString* path = [URLHelper pathForResource:ResourceTypeDisLikePost];
+    NSString *fullPath = [NSString stringWithFormat:@"%@?postId=%ld&userMail=%@", path, postId, user];
+    [self sendGetRequest:fullPath];
+}
+
+- (void)sendGetRequest:(NSString *)url_str {
+    NSURL *url = [NSURL URLWithString:url_str];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+}
+
+
 
 -(void)createRequest: (NSString*)value andPath:(NSString*) path json:(bool)yes
 {
@@ -64,8 +84,8 @@
     [request setHTTPBody:postData];
     // Create url connection and fire request
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-
 }
+
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
@@ -76,6 +96,7 @@
     NSString *responseString = [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
     
     //user verification
+    
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeUserValication]]){
         if([responseString isEqualToString:@"YES"])
             [_delegate userVerifiedFetched:YES];
@@ -105,6 +126,21 @@
     
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeNextFive]]){
         NSArray* posts = [Serialization jsonToPostArray:responseString];
+        [_delegate nextFiveFetched:posts];
+    }
+    
+    if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeLikePost]].location != NSNotFound){
+        if([responseString isEqualToString:@"YES"])
+            [_delegate postLiked:YES];
+        else
+            [_delegate postLiked:NO];
+    }
+    
+    if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeDisLikePost]].location != NSNotFound){
+        if([responseString isEqualToString:@"YES"])
+            [_delegate postDisLiked:YES];
+        else
+            [_delegate postDisLiked:NO];
     }
 
     

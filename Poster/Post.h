@@ -15,10 +15,10 @@
 @property User* user;
 @property NSString* postText;
 //must be other type
-@property NSArray* likes;
+@property NSMutableArray* likes;
 @property NSDate* date;
-@property NSArray* coments;
-
+@property NSMutableArray* coments;
+@property long postId;
 
 
 @end

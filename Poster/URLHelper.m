@@ -30,6 +30,12 @@
         case ResourceTypeNextFive:
             return @"http://localhost:8080/RestApi/auth/nextFive";
             break;
+        case ResourceTypeLikePost:
+            return @"http://localhost:8080/RestApi/auth/like";
+            break;
+        case ResourceTypeDisLikePost:
+            return @"http://localhost:8080/RestApi/auth/disLike";
+            break;
             
         default:
             return Nil;
