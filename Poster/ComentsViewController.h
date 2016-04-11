@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ComentCellView.h"
 #import "Post.h"
+#import "Requester.h"
 
-@interface ComentsViewController : UIViewController
+@interface ComentsViewController : UIViewController<RequesterDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextView *comentTextView;
 @property (weak, nonatomic) IBOutlet UIButton *comentButtonTextView;
 @property Post* post;
+@property Coment* tempComent;
+@property Requester* requester;
 
 @end

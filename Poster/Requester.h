@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Coment.h"
 #import "URLHelper.h"
+#import "Post.h"
 
 @protocol RequesterDelegate <NSObject>
 
@@ -19,6 +21,8 @@
 - (void)nextFiveFetched:(NSArray*)posts;
 - (void)postLiked:(BOOL) yes;
 - (void)postDisLiked:(BOOL) yes;
+- (void)comentMaked:(BOOL) yes;
+- (void)postCreated:(BOOL) yes;
 
 @end
 
@@ -33,6 +37,8 @@
 - (void)getNextFive:(int)start;
 - (void)likePostWithId:(long)postId andUser:(NSString*)user;
 - (void)disLikePostWithId:(long)postId andUser:(NSString*)user;
+- (void)makeComent:(Coment*)coment;
+- (void)makePost:(Post*)post;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

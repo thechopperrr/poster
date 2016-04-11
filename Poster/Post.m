@@ -10,4 +10,9 @@
 
 @implementation Post
 
+- (NSString*)getStringDate{
+    long date = ([self.date timeIntervalSinceReferenceDate] * 1000);
+    return [NSString stringWithFormat:@"%ld", date];
+}
+
 @end

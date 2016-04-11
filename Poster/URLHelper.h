@@ -18,6 +18,8 @@ typedef NS_ENUM(NSInteger, ResourceType) {
     ResourceTypeNextFive,
     ResourceTypeLikePost,
     ResourceTypeDisLikePost,
+    ResourceTypeComentPost,
+    ResourceTypeMakePost
 };
 
 + (NSString*)pathForResource:(ResourceType) type;

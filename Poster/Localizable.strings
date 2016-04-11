@@ -6,3 +6,5 @@
 "password_sent_error" = "Somethig went wrong";
 "password_sent" = "Pasword sent to your email";
 "user_no_exist_error" = "User with this email doesn't exist";
+"enter_coment_big_or_small_text" = "Text isn't in write size";
+"pls_login" = "Pleace login";

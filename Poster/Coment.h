@@ -12,4 +12,8 @@
 @property NSString* userMail;
 @property NSString* comentText;
 @property NSDate* date;
+@property long postId;
+
+- (NSString*)getStringDate;
+
 @end

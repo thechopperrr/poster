@@ -15,6 +15,7 @@
 @property NSMutableArray* posts;
 @property bool loading;
 @property Requester* requester;
+@property (weak, nonatomic) IBOutlet UIButton *addPostButton;
 
 
 @end

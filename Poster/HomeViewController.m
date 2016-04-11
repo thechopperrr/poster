@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "ComentsViewController.h"
+#import "CreatePostViewController.h"
 
 @interface HomeViewController ()
 
@@ -36,6 +37,14 @@ static NSString *const CELL_HEADER = @"PostCellView";
         [_posts addObject:posts[i]];
     }
     [_tableView reloadData];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    if( ! [[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]){
+        _addPostButton.hidden = YES;
+    }
+    else
+        _addPostButton.hidden = NO;
 }
 
 - (NSArray*)createPosts {
@@ -180,6 +189,13 @@ static NSString *const CELL_HEADER = @"PostCellView";
         
         
     }
+}
+- (IBAction)addPostButtonPressed:(id)sender {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    CreatePostViewController *controller = (CreatePostViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CreatePostViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
+
 }
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		682C463B1CBAF12C00352D3E /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C463A1CBAF12C00352D3E /* CreatePostViewController.m */; };
 		6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */; };
 		6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */; };
 		6873B94D1CA3D7A0006AEFD4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		682C46391CBAF12C00352D3E /* CreatePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
+		682C463A1CBAF12C00352D3E /* CreatePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
 		6873B92B1C9DAD51006AEFD4 /* ComentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComentCellView.h; sourceTree = "<group>"; };
 		6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComentCellView.m; sourceTree = "<group>"; };
 		6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComentCellView.xib; sourceTree = "<group>"; };
@@ -97,9 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				68DF66281C9803C900245D56 /* User.h */,
+				68DF66291C9803C900245D56 /* User.m */,
 				68DF662E1C98067800245D56 /* Post.h */,
 				68DF662F1C98067800245D56 /* Post.m */,
-				68DF66291C9803C900245D56 /* User.m */,
 				68DF662B1C9804C300245D56 /* Coment.h */,
 				68DF662C1C9804C300245D56 /* Coment.m */,
 				6873B9511CA535D9006AEFD4 /* URLHelper.h */,
@@ -143,6 +146,8 @@
 				689C77931C95704300BC0D26 /* HomeViewController.m */,
 				68E9BAD81C956D0A00042DFD /* LoginViewController.h */,
 				68E9BAD91C956D0A00042DFD /* LoginViewController.m */,
+				682C46391CBAF12C00352D3E /* CreatePostViewController.h */,
+				682C463A1CBAF12C00352D3E /* CreatePostViewController.m */,
 				68E9BADB1C956D0A00042DFD /* Main.storyboard */,
 				68E9BAE11C956D0A00042DFD /* Assets.xcassets */,
 				6873B9541CA53C14006AEFD4 /* Localizable.strings */,
@@ -249,6 +254,7 @@
 				689C77941C95704300BC0D26 /* HomeViewController.m in Sources */,
 				68E9BAD41C956D0A00042DFD /* main.m in Sources */,
 				6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */,
+				682C463B1CBAF12C00352D3E /* CreatePostViewController.m in Sources */,
 				6873B9531CA535D9006AEFD4 /* URLHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,6 +36,12 @@
         case ResourceTypeDisLikePost:
             return @"http://localhost:8080/RestApi/auth/disLike";
             break;
+        case ResourceTypeComentPost:
+            return @"http://localhost:8080/RestApi/auth/makeComent";
+            break;
+        case ResourceTypeMakePost:
+            return @"http://localhost:8080/RestApi/auth/makePost";
+            break;
             
         default:
             return Nil;

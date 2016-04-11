@@ -14,6 +14,12 @@
 //on user returns {"mail":"hose@abv.bg","pass":"123"}
 @implementation Requester
 
+- (void)makePost:(Post *)post{
+    //todo add date
+    NSString* jsonUser =[ NSString stringWithFormat: @"{\"user\":{\"mail\":\"%@\",\"pass\":\"%@\"}, \"postText\":\"%@\",\"likes\":[],\"postDate\":%d, \"coments\":[],\"postId\":0}",post.user.email, post.user.pass,post.postText,0];
+    NSString* path = [URLHelper pathForResource:ResourceTypeMakePost];
+    [self createRequest:jsonUser andPath:path json:YES];
+}
 
 - (void)verifyUser:(User*)user{
     NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
@@ -36,6 +42,12 @@
 - (void)forgetPass:(User*)user{
     NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
     NSString* path = [URLHelper pathForResource:ResourceTypeForgetPassword];
+    [self createRequest:jsonUser andPath:path json:YES];
+}
+
+- (void)makeComent:(Coment*)coment{
+    NSString* jsonUser =[NSString stringWithFormat:@"{\"userMail\":\"%@\",\"comentText\":\"%@\",\"date\":%@,\"postId\":%ld}", coment.userMail, coment.comentText, [coment getStringDate], coment.postId];
+    NSString* path = [URLHelper pathForResource:ResourceTypeComentPost];
     [self createRequest:jsonUser andPath:path json:YES];
 }
 
@@ -129,6 +141,13 @@
         [_delegate nextFiveFetched:posts];
     }
     
+    if([url isEqualToString:[URLHelper pathForResource:ResourceTypeComentPost]]){
+        if([responseString isEqualToString:@"YES"])
+            [_delegate comentMaked:YES];
+        else
+            [_delegate comentMaked:NO];
+    }
+    
     if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeLikePost]].location != NSNotFound){
         if([responseString isEqualToString:@"YES"])
             [_delegate postLiked:YES];
@@ -141,6 +160,13 @@
             [_delegate postDisLiked:YES];
         else
             [_delegate postDisLiked:NO];
+    }
+    
+    if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeMakePost]].location != NSNotFound){
+        if([responseString isEqualToString:@"YES"])
+            [_delegate postCreated:YES];
+        else
+            [_delegate postCreated:NO];
     }
 
     

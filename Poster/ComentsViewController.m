@@ -23,6 +23,8 @@ static NSString *const CELL_ID = @"ComentCellView";
 - (void)viewDidLoad {
     [super viewDidLoad];
      [_tableView registerNib:[UINib nibWithNibName:@"ComentCellView" bundle:nil] forCellReuseIdentifier:CELL_ID];
+    _requester = [[Requester alloc]init];
+    _requester.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -32,11 +34,34 @@ static NSString *const CELL_ID = @"ComentCellView";
 }
 
 - (IBAction)maceComent:(id)sender {
-    if(_comentTextView.text.length > COMENT_LENGHT){
-        //text too long
-    } else {
-        //make coment
+    if(_comentTextView.text.length > COMENT_LENGHT || _comentTextView.text.length < 1){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"enter_coment_big_or_small_text", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
     }
+    if( ! [[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"pls_login", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+
+        _tempComent = [[Coment alloc]init];
+        _tempComent.userMail = [[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"];
+        _tempComent.comentText = _comentTextView.text;
+        _tempComent.postId = _post.postId;
+        _tempComent.date = [NSDate date];
+        [_requester makeComent:_tempComent];
+        _comentTextView.text = @"";
+
 }
 
 #pragma mark - Table view data source
@@ -86,6 +111,14 @@ static NSString *const CELL_ID = @"ComentCellView";
     return 1;
 }
 
-
+- (void)comentMaked:(BOOL)yes{
+    if(yes){
+        [_post.coments addObject:_tempComent];
+        [_tableView reloadData];
+    }
+    else {
+        _tempComent = nil;
+    }
+}
 
 @end

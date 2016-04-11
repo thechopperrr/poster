@@ -28,6 +28,7 @@
             com.comentText = [comDict objectForKey:@"comentText"];
             NSDate *date = [NSDate dateWithTimeIntervalSince1970:([[comDict objectForKey:@"date"] longLongValue] / 1000.0)];
             com.date = date;
+            com.postId = (int)[comDict objectForKey:@"postId"];
             [parsedComents addObject:com];
         }
         
