@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "UserInfo.h"
 
 
 @interface LoginViewController ()
@@ -18,6 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _nameTextField.placeholder = NSLocalizedString(@"mail_hint", nil);
+    _passTextField.placeholder = NSLocalizedString(@"pass_hint", nil);
+    self.navigationItem.title = NSLocalizedString(@"login_title", nil);
+    
+    if([UserInfo isUserLogged]){
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        HomeViewController *controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
+        [self.navigationController pushViewController:controller animated:YES];
+    }
        // Do any additional setup after loading the view, typically from a nib.
 }
 

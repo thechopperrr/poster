@@ -19,6 +19,7 @@
 static NSString *const CELL_HEADER = @"PostCellView";
 
 - (void)viewDidLoad {
+    
     _posts = [[NSMutableArray alloc]init];
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
@@ -40,11 +41,20 @@ static NSString *const CELL_HEADER = @"PostCellView";
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    if( ! [[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]){
-        _addPostButton.hidden = YES;
-    }
-    else
+    self.navigationItem.hidesBackButton = YES;
+    if( [UserInfo isUserLogged]){
         _addPostButton.hidden = NO;
+        _logOutButton.hidden = NO;
+    }
+    else {
+        _addPostButton.hidden = YES;
+        _logOutButton.hidden = YES;
+    }
+
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    self.navigationItem.hidesBackButton = NO;
 }
 
 - (NSArray*)createPosts {
@@ -194,8 +204,38 @@ static NSString *const CELL_HEADER = @"PostCellView";
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     CreatePostViewController *controller = (CreatePostViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"CreatePostViewController"];
+    controller.posts = _posts;
     [self.navigationController pushViewController:controller animated:YES];
 
+}
+- (IBAction)logOutButtonPressed:(id)sender {
+    [UserInfo logOut];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)sharePost:(Post*)post{
+    
+        NSString* wrote = NSLocalizedString(@"wrote", nil);
+        NSString* inString = NSLocalizedString(@"in", nil);
+        NSString* poster = NSLocalizedString(@"poster", nil);
+    NSString *textToShare = [NSString stringWithFormat:@"@%@ %@ %@ %@ %@", post.user.email, wrote, post.postText,inString, poster];
+       // NSURL *myWebsite = [NSURL URLWithString:@"http://www.codingexplorer.com/"];
+        
+        NSArray *objectsToShare = @[textToShare];
+        
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+        
+        NSArray *excludeActivities = @[UIActivityTypeAirDrop,
+                                       UIActivityTypePrint,
+                                       UIActivityTypeAssignToContact,
+                                       UIActivityTypeSaveToCameraRoll,
+                                       UIActivityTypeAddToReadingList,
+                                       UIActivityTypePostToFlickr,
+                                       UIActivityTypePostToVimeo];
+        
+        activityVC.excludedActivityTypes = excludeActivities;
+        
+        [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end

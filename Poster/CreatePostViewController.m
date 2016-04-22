@@ -39,10 +39,17 @@
 
 - (void)postCreated:(BOOL)yes{
     if(yes){
-        
+        [_posts insertObject:_tempPost atIndex:0];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else{
-        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_or_server_error", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+
     }
 }
 

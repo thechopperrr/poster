@@ -8,3 +8,11 @@
 "user_no_exist_error" = "User with this email doesn't exist";
 "enter_coment_big_or_small_text" = "Text isn't in write size";
 "pls_login" = "Pleace login";
+"mail_hint" = "email";
+"pass_hint" = "pass";
+"login_title" = "LOGIN";
+"pass_hint_2" = "password again";
+"network_or_server_error" = "Network or server error.";
+"wrote" = "wrote";
+"in" = "in";
+"poster" = "Poster";

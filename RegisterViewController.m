@@ -10,6 +10,13 @@
 
 @implementation RegisterViewController
 
+- (void)viewDidLoad{
+    _email.placeholder = NSLocalizedString(@"mail_hint", nil);
+    _password.placeholder = NSLocalizedString(@"pass_hint", nil);
+    _passAgain.placeholder = NSLocalizedString(@"pass_hint_2", nil);
+
+}
+
 - (IBAction)regButtonPressed:(id)sender {
     //todo: filter
     if(_email.text.length < 1 || _password.text.length < 1 || ![_password.text isEqualToString:_passAgain.text] ){

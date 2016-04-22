@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *postTextView;
 @property Requester* req;
 @property Post* tempPost;
+@property NSMutableArray* posts;
 
 @end

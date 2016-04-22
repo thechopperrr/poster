@@ -13,6 +13,7 @@
 @protocol PostCellViewProtocol <NSObject>
 
 - (void)openComentsWithPost:(Post*)post;
+- (void)sharePost:(Post*)post;
 
 @end
 
@@ -30,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *comentsCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *comentsButton;
 @property Requester* requester;
+@property (weak, nonatomic) IBOutlet UIView *innerView;
 
 
 @property (nonatomic, weak) id<PostCellViewProtocol> delegate;

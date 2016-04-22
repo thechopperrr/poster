@@ -8,6 +8,7 @@
 //
 
 #import "PostCellView.h"
+#import "UserInfo.h"
 
 @implementation PostCellView
 - (IBAction)cmtBtn:(id)sender {
@@ -32,35 +33,69 @@
                                action:NULL
                      forControlEvents:UIControlEventAllEvents];
             [_likeButton addTarget:self action:@selector(disLikeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            [_likeButton setTitle:@"-" forState:UIControlStateNormal];
+            [_likeButton setImage:[UIImage imageNamed:@"liked"] forState:UIControlStateNormal];
             //todo set image
         } else{
             [_likeButton removeTarget:nil
                                action:NULL
                      forControlEvents:UIControlEventAllEvents];
             [_likeButton addTarget:self action:@selector(likeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-            [_likeButton setTitle:@"+" forState:UIControlStateNormal];
+            [_likeButton setImage:[UIImage imageNamed:@"noliked"] forState:UIControlStateNormal];
             //todo set image
         }
     }
+    _innerView.layer.cornerRadius = 5;
+    _innerView.layer.masksToBounds = YES;
 }
+
 - (IBAction)likeButtonPressed:(id)sender {
 
-    [_requester likePostWithId:_post.postId andUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]];
+    if([UserInfo getLoggedUserName])
+        [_requester likePostWithId:_post.postId andUser:[UserInfo getLoggedUserName]];
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"pls_login", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+
+    }
 }
 
 - (IBAction)disLikeButtonPressed:(id)sender {
     
-    [_requester disLikePostWithId:_post.postId andUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]];
+    if([UserInfo getLoggedUserName])
+        [_requester disLikePostWithId:_post.postId andUser:[[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]];
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"pls_login", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
 }
 
 - (IBAction)shareButtonPressed:(id)sender {
-    //open share vc in social media 
+    [_delegate sharePost:_post];
 }
 
 
 - (IBAction)testButtAction:(id)sender {
-    [_delegate openComentsWithPost:_post];
+    if([UserInfo getLoggedUserName])
+        [_delegate openComentsWithPost:_post];
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"pls_login", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
+
 }
 
 - (void)postLiked:(BOOL) yes{
