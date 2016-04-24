@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface UserInfo : NSObject
 
@@ -15,5 +16,7 @@
 + (BOOL)isUserLogged;
 + (void)logOut;
 + (void)loginWithUserName:(NSString*)name andPass: (NSString*)pass;
++ (User*)getUser;
++ (void)setUser:(User*)usr;
 
 @end

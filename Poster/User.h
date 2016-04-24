@@ -11,4 +11,5 @@
 @interface User : NSObject
 @property NSString* email;
 @property NSString* pass;
+@property NSString* imageUrl;
 @end

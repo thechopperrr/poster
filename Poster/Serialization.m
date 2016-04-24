@@ -41,6 +41,7 @@
         p.user = [[User alloc]init];
         p.postId = [[object objectForKey:@"postId"] longLongValue];
         p.user.email = [user objectForKey:@"mail"];
+        p.user.imageUrl = [user objectForKey:@"imageUrl"];
         p.postText = postText;
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:([postDate longLongValue] / 1000.0)];
         p.date = date;
@@ -51,4 +52,17 @@
     
     return array;
 }
+
++ (User*)jsonToUser:(NSString*)jsonStr{
+
+    User* usr = [[User alloc]init];
+    NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary* object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+           usr.email = [object objectForKey:@"mail"];
+        usr.pass =  [object objectForKey:@"pass"];
+        usr.imageUrl = [object objectForKey:@"imageUrl"];
+    
+    return usr;
+}
+
 @end

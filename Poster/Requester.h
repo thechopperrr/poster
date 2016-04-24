@@ -11,10 +11,11 @@
 #import "Coment.h"
 #import "URLHelper.h"
 #import "Post.h"
+#import <UIKit/UIKit.h>
 
 @protocol RequesterDelegate <NSObject>
 
--(void)userVerifiedFetched:(BOOL) yes;
+-(void)userVerifiedFetched:(User*) usr;
 -(void)registrationWitStatus:(BOOL) yes;
 -(void)isSuchUserFetched:(BOOL) yes;
 - (void)passwordSent:(BOOL) yes;
@@ -39,6 +40,7 @@
 - (void)disLikePostWithId:(long)postId andUser:(NSString*)user;
 - (void)makeComent:(Coment*)coment;
 - (void)makePost:(Post*)post;
++ (UIImage *) getImageFromURL:(NSString *)fileURL;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

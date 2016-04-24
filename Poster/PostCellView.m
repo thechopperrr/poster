@@ -9,6 +9,7 @@
 
 #import "PostCellView.h"
 #import "UserInfo.h"
+#import "Requester.h"
 
 @implementation PostCellView
 - (IBAction)cmtBtn:(id)sender {
@@ -46,6 +47,7 @@
     }
     _innerView.layer.cornerRadius = 5;
     _innerView.layer.masksToBounds = YES;
+    [_userImage setImage:[Requester getImageFromURL:_post.user.imageUrl]];
 }
 
 - (IBAction)likeButtonPressed:(id)sender {

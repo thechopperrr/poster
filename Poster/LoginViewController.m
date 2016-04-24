@@ -84,12 +84,9 @@
 
 // delegates
 
-- (void)userVerifiedFetched:(BOOL)yes{
-    if(yes){
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:_nameTextField.text forKey:@"userEmail"];
-        [defaults setObject:_passTextField.text forKey:@"userPass"];
-        [defaults synchronize];
+- (void)userVerifiedFetched:(User*)usr{
+    if(usr.email){
+        [UserInfo setUser:usr];
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         HomeViewController *controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];
         [self.navigationController pushViewController:controller animated:YES];

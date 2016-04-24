@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "ComentsViewController.h"
 #import "CreatePostViewController.h"
+#import "SettingsViewController.h"
 
 @interface HomeViewController ()
 
@@ -209,8 +210,11 @@ static NSString *const CELL_HEADER = @"PostCellView";
 
 }
 - (IBAction)logOutButtonPressed:(id)sender {
-    [UserInfo logOut];
-    [self.navigationController popViewControllerAnimated:YES];
+//    [UserInfo logOut];
+//    [self.navigationController popViewControllerAnimated:YES];
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    SettingsViewController *controller = (SettingsViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"SettingsViewController"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)sharePost:(Post*)post{

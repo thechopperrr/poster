@@ -16,3 +16,5 @@
 "wrote" = "wrote";
 "in" = "in";
 "poster" = "Poster";
+"wrong_pass_change" = "Password is too short or second type pass is not the same ass pass";
+"image_url" = "Place image url here";

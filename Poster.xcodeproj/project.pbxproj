@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		682C463B1CBAF12C00352D3E /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C463A1CBAF12C00352D3E /* CreatePostViewController.m */; };
 		682C46521CBE657A00352D3E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C46511CBE657A00352D3E /* UserInfo.m */; };
+		684EAB391CCA65AA001EFA07 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684EAB381CCA65AA001EFA07 /* SettingsViewController.m */; };
 		6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */; };
 		6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */; };
 		6873B94D1CA3D7A0006AEFD4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */; };
@@ -37,6 +38,8 @@
 		682C463A1CBAF12C00352D3E /* CreatePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
 		682C46501CBE657A00352D3E /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		682C46511CBE657A00352D3E /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		684EAB371CCA65AA001EFA07 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		684EAB381CCA65AA001EFA07 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		6873B92B1C9DAD51006AEFD4 /* ComentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComentCellView.h; sourceTree = "<group>"; };
 		6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComentCellView.m; sourceTree = "<group>"; };
 		6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComentCellView.xib; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				68E9BAD51C956D0A00042DFD /* AppDelegate.h */,
 				68E9BAD61C956D0A00042DFD /* AppDelegate.m */,
 				6873B92A1C9DAD16006AEFD4 /* cells */,
+				684EAB371CCA65AA001EFA07 /* SettingsViewController.h */,
+				684EAB381CCA65AA001EFA07 /* SettingsViewController.m */,
 				6873B94B1CA3D7A0006AEFD4 /* RegisterViewController.h */,
 				6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */,
 				68DF66311C99A25900245D56 /* ComentsViewController.h */,
@@ -248,6 +253,7 @@
 				68DF66331C99A25900245D56 /* ComentsViewController.m in Sources */,
 				682C46521CBE657A00352D3E /* UserInfo.m in Sources */,
 				68E9BAE01C956D0A00042DFD /* Poster.xcdatamodeld in Sources */,
+				684EAB391CCA65AA001EFA07 /* SettingsViewController.m in Sources */,
 				68DF662D1C9804C300245D56 /* Coment.m in Sources */,
 				68DF662A1C9803C900245D56 /* User.m in Sources */,
 				6873B9501CA425E8006AEFD4 /* Requester.m in Sources */,

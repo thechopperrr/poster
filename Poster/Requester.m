@@ -22,25 +22,25 @@
 }
 
 - (void)verifyUser:(User*)user{
-    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
+    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\",\"imageUrl\":\"%@\"}", user.email, user.pass, user.imageUrl];
     NSString* path = [URLHelper pathForResource:ResourceTypeUserValication];
     [self createRequest:jsonUser andPath:path json:YES];
 }
 
 - (void)registerUser:(User*)user{
-    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
+    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\",\"imageUrl\":\"%@\"}", user.email, user.pass, user.imageUrl];
     NSString* path = [URLHelper pathForResource:ResourceTypeUserRegistration];
     [self createRequest:jsonUser andPath:path json:YES];
 }
 
 - (void)isSuchUser:(User*)user{
-    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
+    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\",\"imageUrl\":\"%@\"}", user.email, user.pass, user.imageUrl];
     NSString* path = [URLHelper pathForResource:ResourceTypeisSuchUser];
     [self createRequest:jsonUser andPath:path json:YES];
 }
 
 - (void)forgetPass:(User*)user{
-    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\"}", user.email, user.pass];
+    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\",\"imageUrl\":\"%@\"}", user.email, user.pass, user.imageUrl];
     NSString* path = [URLHelper pathForResource:ResourceTypeForgetPassword];
     [self createRequest:jsonUser andPath:path json:YES];
 }
@@ -49,6 +49,12 @@
     NSString* jsonUser =[NSString stringWithFormat:@"{\"userMail\":\"%@\",\"comentText\":\"%@\",\"date\":%@,\"postId\":%ld}", coment.userMail, coment.comentText, [coment getStringDate], coment.postId];
     NSString* path = [URLHelper pathForResource:ResourceTypeComentPost];
     [self createRequest:jsonUser andPath:path json:YES];
+}
+
+- (void)setImageToUser:(User*)user withUrl:(NSString*)url{
+    NSString* path = [URLHelper pathForResource:ResourceTypeNewImage];
+    NSString *fullPath = [NSString stringWithFormat:@"%@?userMail=%@&url=%@", path, user.email, url];
+    [self sendGetRequest:fullPath];
 }
 
 - (void)getNextFive:(int)start{
@@ -110,10 +116,7 @@
     //user verification
     
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeUserValication]]){
-        if([responseString isEqualToString:@"YES"])
-            [_delegate userVerifiedFetched:YES];
-        else
-            [_delegate userVerifiedFetched:NO];
+        [_delegate userVerifiedFetched:[Serialization jsonToUser:responseString]];
     }
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeUserRegistration]]){
         if([responseString isEqualToString:@"YES"])
@@ -186,5 +189,15 @@
     
 }
 
++ (UIImage *) getImageFromURL:(NSString *)fileURL {
+    UIImage * result;
+    
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+    result = [UIImage imageWithData:data];
+    
+    if( ! result)
+        return [UIImage imageNamed:@"profile"];
+    return result;
+}
 
 @end

@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *comentsButton;
 @property Requester* requester;
 @property (weak, nonatomic) IBOutlet UIView *innerView;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
 
 
 @property (nonatomic, weak) id<PostCellViewProtocol> delegate;

@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Poster/Requester.m"
-            timestampString = "482852498.478472"
+            filePath = "Poster/HomeViewController.m"
+            timestampString = "483124785.102041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-likePostWithId:andUser:"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "-sharePost:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Poster/HomeViewController.m"
-            timestampString = "483023969.271569"
+            filePath = "Poster/Requester.m"
+            timestampString = "483025949.543408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "-sharePost:"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-setImageToUser:withUrl:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Poster/Requester.m"
+            timestampString = "483202163.007463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "+getImageFromURL:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

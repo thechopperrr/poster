@@ -34,13 +34,30 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:Nil forKey:@"userEmail"];
     [defaults setObject:Nil forKey:@"userPass"];
+    [defaults synchronize];
 }
 
 + (void)loginWithUserName:(NSString*)name andPass: (NSString*)pass{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:name forKey:@"userEmail"];
     [defaults setObject:pass forKey:@"userPass"];
+    [defaults synchronize];
 }
 
++ (User*)getUser{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    User* usr = [[User alloc]init];
+    usr.email = [defaults objectForKey:@"userEmail"];
+    usr.pass = [defaults objectForKey:@"userPass"];
+    usr.imageUrl = [defaults objectForKey:@"imageUrl"];
+    return usr;
+}
 
++ (void)setUser:(User *)usr{
+     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:usr.email forKey:@"userEmail"];
+    [defaults setObject:usr.pass forKey:@"userPass"];
+    [defaults setObject:usr.imageUrl forKey:@"imageUrl"];
+    [defaults synchronize];
+}
 @end

@@ -178,6 +178,75 @@
             </objects>
             <point key="canvasLocation" x="799" y="371"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="GE8-7g-Jm1">
+            <objects>
+                <viewController restorationIdentifier="SettingsViewController" storyboardIdentifier="SettingsViewController" id="IZf-wq-W7D" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ghq-0e-Pg3"/>
+                        <viewControllerLayoutGuide type="bottom" id="bDq-sG-RZU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e4w-xl-8iJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="him-2A-Tfy">
+                                <rect key="frame" x="20" y="71" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eiM-lN-K6Q">
+                                <rect key="frame" x="20" y="109" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCA-bh-cJb">
+                                <rect key="frame" x="20" y="223" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA0-lO-tW2">
+                                <rect key="frame" x="20" y="147" width="280" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="savePassButtonPressed:" destination="IZf-wq-W7D" eventType="touchUpInside" id="pim-ru-y6B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtS-Ic-Pol">
+                                <rect key="frame" x="20" y="185" width="280" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="logOutButtonPressed:" destination="IZf-wq-W7D" eventType="touchUpInside" id="LtX-XK-gUb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Q4-aE-JMw">
+                                <rect key="frame" x="20" y="261" width="280" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveImageButtonPressed:" destination="IZf-wq-W7D" eventType="touchUpInside" id="4M2-9t-BMX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTs-n2-QgZ">
+                                <rect key="frame" x="96" y="299" width="128" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageTextField" destination="aCA-bh-cJb" id="Lzb-aa-VC8"/>
+                        <outlet property="imageView" destination="oTs-n2-QgZ" id="soe-Me-KQw"/>
+                        <outlet property="logOutButton" destination="gtS-Ic-Pol" id="aYt-W8-9oD"/>
+                        <outlet property="passAgainTextField" destination="eiM-lN-K6Q" id="pEh-vC-UVh"/>
+                        <outlet property="passTextField" destination="him-2A-Tfy" id="FxN-72-UBb"/>
+                        <outlet property="saveImageButton" destination="5Q4-aE-JMw" id="yaj-3B-jfM"/>
+                        <outlet property="savePass" destination="NA0-lO-tW2" id="LBx-cA-OAV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qS-lk-h1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085" y="1002"/>
+        </scene>
         <!--Coments View Controller-->
         <scene sceneID="QzN-Zk-xGh">
             <objects>

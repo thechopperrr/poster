@@ -12,5 +12,6 @@
 @interface Serialization : NSObject
 
 + (NSArray*)jsonToPostArray:(NSString*)jsonStr;
++ (User*)jsonToUser:(NSString*)jsonStr;
 
 @end

@@ -42,6 +42,9 @@
         case ResourceTypeMakePost:
             return @"http://localhost:8080/RestApi/auth/makePost";
             break;
+        case ResourceTypeNewImage:
+            return @"http://localhost:8080/RestApi/auth/newImage";
+            break;
             
         default:
             return Nil;
