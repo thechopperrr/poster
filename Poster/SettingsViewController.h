@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "Requester.h"
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController<RequesterDelegate>
 @property User* user;
 @property (weak, nonatomic) IBOutlet UITextField *passTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passAgainTextField;
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *imageTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveImageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property Requester* requester;
 
 
 @end

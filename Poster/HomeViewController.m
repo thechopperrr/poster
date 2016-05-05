@@ -24,11 +24,13 @@ static NSString *const CELL_HEADER = @"PostCellView";
     _posts = [[NSMutableArray alloc]init];
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
+    [_logOutButton setTitle:NSLocalizedString(@"settings", nil) forState:UIControlStateNormal];
     
     _requester = [[Requester alloc]init];
     _requester.delegate = self;
     [_requester getNextFive:0];
     _loading = YES;
+    self.title = NSLocalizedString(@"poster", nil);
     
     // Do any additional setup after loading the view.
 }
@@ -42,10 +44,11 @@ static NSString *const CELL_HEADER = @"PostCellView";
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    self.navigationItem.hidesBackButton = YES;
+    
     if( [UserInfo isUserLogged]){
         _addPostButton.hidden = NO;
         _logOutButton.hidden = NO;
+        self.navigationItem.hidesBackButton = YES;
     }
     else {
         _addPostButton.hidden = YES;

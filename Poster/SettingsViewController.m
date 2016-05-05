@@ -18,12 +18,24 @@
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
+     [super viewDidLoad];
+    _requester = [[Requester alloc]init];
+    _requester.delegate = self;
+    self.title = NSLocalizedString(@"settings", nil);
     _user = [UserInfo getUser];
-    [super viewDidLoad];
+    [self setUp];
+        // Do any additional setup after loading the view.
+}
+
+- (void)setUp{
     _passTextField.placeholder = NSLocalizedString(@"pass_hint", nil);
     _passAgainTextField.placeholder = NSLocalizedString(@"pass_hint_2", nil);
     _imageTextField.placeholder = NSLocalizedString(@"image_url", nil);
-        
+    [_saveImageButton setTitle:NSLocalizedString(@"save_new_image", nil) forState:UIControlStateNormal];
+    
+    [_savePass setTitle:NSLocalizedString(@"change_pass", nil) forState:UIControlStateNormal];
+    [_logOutButton setTitle:NSLocalizedString(@"log_out", nil) forState:UIControlStateNormal];
+    
     if(_user.imageUrl){
         [_imageView setImage:[Requester getImageFromURL:_user.imageUrl]];
     }
@@ -31,7 +43,6 @@
         [_imageView setImage:[UIImage imageNamed:@"profile"]];
     }
 
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,13 +65,39 @@
     }
 
 }
+
 - (IBAction)logOutButtonPressed:(id)sender {
     [UserInfo logOut];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 - (IBAction)saveImageButtonPressed:(id)sender {
+    if([self isUrl:_imageTextField.text]){
+        [_requester setImage:_imageTextField.text toUser:[UserInfo getUser]];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"not_url", nil)
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        _imageTextField.text = @"";
+
+    }
 }
 
+- (BOOL)isUrl:(NSString*)text{
+    //todo make it 
+    return YES;
+}
+
+- (void)imageSetted:(NSString *)imageUrl{
+    _user.imageUrl = imageUrl;
+    [UserInfo setUser:_user];
+    [self setUp];
+}
 /*
 #pragma mark - Navigation
 

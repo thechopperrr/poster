@@ -33,6 +33,7 @@
 @property Requester* requester;
 @property (weak, nonatomic) IBOutlet UIView *innerView;
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 
 @property (nonatomic, weak) id<PostCellViewProtocol> delegate;

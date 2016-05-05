@@ -17,11 +17,15 @@
     NSMutableArray* array = [[NSMutableArray alloc]init];
     NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
     NSArray* jsonArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    NSArray* coments;
     
     for(NSDictionary* object in jsonArray){
         NSDictionary* user = [object objectForKey:@"user"];
-        NSArray* coments = [object objectForKey:@"coments"];
+        if([[object objectForKey:@"coments"] isKindOfClass:[NSArray class]]){
+            coments = [object objectForKey:@"coments"];
+        }
         NSMutableArray* parsedComents = [[NSMutableArray alloc]init];
+        
         for(NSDictionary* comDict in coments){
             Coment* com = [[Coment alloc]init];
             com.userMail = [comDict objectForKey:@"userMail"];
@@ -35,6 +39,7 @@
         NSString* postText = [object objectForKey:@"postText"];
         NSString* postDate = [object objectForKey:@"postDate"];
         NSMutableArray* likes = [[NSMutableArray alloc]initWithArray:[object objectForKey:@"likes"]];
+        likes = [self clearArray:likes];
         
         
         Post* p = [[Post alloc]init];
@@ -51,6 +56,17 @@
     }
     
     return array;
+}
+
++ (NSMutableArray*)clearArray:(NSMutableArray*) arr{
+    NSMutableIndexSet *indexes = [[NSMutableIndexSet alloc] init];
+    for(int i=0; i<arr.count; i++){
+        if([arr[i] isEqualToString:@""]){
+            [indexes addIndex:i];
+        }
+    }
+    [arr removeObjectsAtIndexes:indexes];
+    return arr;
 }
 
 + (User*)jsonToUser:(NSString*)jsonStr{

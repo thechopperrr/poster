@@ -22,7 +22,7 @@
 }
 
 - (void)setUp{
-    [_userLabel setText:_post.user.email];
+    [_userLabel setText:[NSString stringWithFormat:@" %@", _post.user.email]];
     [_comentTextView setText:_post.postText];
     [_likesLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_post.likes.count]];
     [_comentsCountLabel setText:[NSString stringWithFormat:@"%lu", (unsigned long)_post.coments.count]];
@@ -35,19 +35,27 @@
                      forControlEvents:UIControlEventAllEvents];
             [_likeButton addTarget:self action:@selector(disLikeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             [_likeButton setImage:[UIImage imageNamed:@"liked"] forState:UIControlStateNormal];
-            //todo set image
+
         } else{
             [_likeButton removeTarget:nil
                                action:NULL
                      forControlEvents:UIControlEventAllEvents];
             [_likeButton addTarget:self action:@selector(likeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             [_likeButton setImage:[UIImage imageNamed:@"noliked"] forState:UIControlStateNormal];
-            //todo set image
+
         }
+    }
+    if(_post.likes.count < 1){
+        [_likeButton removeTarget:nil
+                           action:NULL
+                 forControlEvents:UIControlEventAllEvents];
+        [_likeButton addTarget:self action:@selector(likeButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [_likeButton setImage:[UIImage imageNamed:@"noliked"] forState:UIControlStateNormal];
     }
     _innerView.layer.cornerRadius = 5;
     _innerView.layer.masksToBounds = YES;
     [_userImage setImage:[Requester getImageFromURL:_post.user.imageUrl]];
+    [_dateLabel setText:_post.date.description];
 }
 
 - (IBAction)likeButtonPressed:(id)sender {

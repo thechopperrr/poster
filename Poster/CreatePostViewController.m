@@ -18,7 +18,19 @@
     [super viewDidLoad];
     _req = [[Requester alloc]init];
     _req.delegate = self;
-    // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    _postTextView.layer.cornerRadius = 5;
+    _postTextView.layer.masksToBounds = YES;
+    _postTextView.layer.borderColor = [UIColor blueColor].CGColor;
+    _postTextView.layer.borderWidth = 2.0f;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    _postTextView.text = @"";
+    [_createButton setTitle:NSLocalizedString(@"make_post_button", nil) forState:UIControlStateNormal];
+    self.title = NSLocalizedString(@"make_post_title", nil);
+
 }
 
 - (void)didReceiveMemoryWarning {

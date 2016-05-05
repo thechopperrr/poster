@@ -24,6 +24,7 @@
 - (void)postDisLiked:(BOOL) yes;
 - (void)comentMaked:(BOOL) yes;
 - (void)postCreated:(BOOL) yes;
+- (void)imageSetted:(NSString*)imageUrl;
 
 @end
 
@@ -41,6 +42,7 @@
 - (void)makeComent:(Coment*)coment;
 - (void)makePost:(Post*)post;
 + (UIImage *) getImageFromURL:(NSString *)fileURL;
+- (void)setImage:(NSString*)imageUrl toUser:(User*)user;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

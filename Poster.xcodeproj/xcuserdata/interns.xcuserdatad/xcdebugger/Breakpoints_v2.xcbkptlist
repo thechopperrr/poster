@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Poster/CreatePostViewController.m"
-            timestampString = "482075627.76624"
+            timestampString = "483368413.511294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "-postCreated:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Poster/HomeViewController.m"
-            timestampString = "483124785.102041"
+            timestampString = "483368809.580746"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "-sharePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Poster/Requester.m"
-            timestampString = "483202163.007463"
+            timestampString = "483268177.699562"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
-            landmarkName = "+getImageFromURL:"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-setImage:toUser:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

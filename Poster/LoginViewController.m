@@ -85,7 +85,7 @@
 // delegates
 
 - (void)userVerifiedFetched:(User*)usr{
-    if(usr.email){
+    if( ! [usr.email isEqual:[NSNull null]]){
         [UserInfo setUser:usr];
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         HomeViewController *controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"HomeViewController"];

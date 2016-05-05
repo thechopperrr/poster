@@ -18,3 +18,11 @@
 "poster" = "Poster";
 "wrong_pass_change" = "Password is too short or second type pass is not the same ass pass";
 "image_url" = "Place image url here";
+"settings" = "Settings";
+"change_pass" = "Change password";
+"log_out" = "Log out";
+"save_new_image" = "Save new image";
+"not_url" = "Text is not valid url";
+"make_post_button" = "Create post";
+"make_post_title" = "Create post";
+"make_post_hint" = "Your post text";

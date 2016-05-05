@@ -80,6 +80,12 @@
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
+- (void)setImage:(NSString*)imageUrl toUser:(User*)user{
+    NSString* path = [URLHelper pathForResource:ResourceTypeNewImage];
+    NSString *fullPath = [NSString stringWithFormat:@"%@?imageUrl=%@&userMail=%@", path, imageUrl, user.email];
+    [self sendGetRequest:fullPath];
+}
+
 
 
 -(void)createRequest: (NSString*)value andPath:(NSString*) path json:(bool)yes
@@ -141,7 +147,7 @@
     
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeNextFive]]){
         NSArray* posts = [Serialization jsonToPostArray:responseString];
-        [_delegate nextFiveFetched:posts];
+        [_delegate nextFiveFetched:[self sortPosts:posts]];
     }
     
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeComentPost]]){
@@ -171,8 +177,18 @@
         else
             [_delegate postCreated:NO];
     }
+    if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeNewImage]].location != NSNotFound){
+        //todo check for error ... 404 etc
+        [_delegate imageSetted:responseString];
+    }
 
     
+}
+
+- (NSArray*)sortPosts:(NSArray*)posts{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    NSArray *orderedArray = [posts sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    return orderedArray;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
