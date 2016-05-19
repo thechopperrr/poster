@@ -14,7 +14,7 @@
 + (NSString*)pathForResource:(ResourceType) type{
     switch (type) {
         case ResourceTypeUserValication:
-            return @"http://localhost:8080/RestApi/auth/validateUser";
+            return @"http://localhost:8080/RestApi/auth/isValidUser";
             break;
             
         case ResourceTypeisSuchUser:
@@ -44,6 +44,9 @@
             break;
         case ResourceTypeNewImage:
             return @"http://localhost:8080/RestApi/auth/newImage";
+            break;
+        case ResourceTypeGetComents:
+            return @"http://localhost:8080/RestApi/auth/getComents";
             break;
             
         default:

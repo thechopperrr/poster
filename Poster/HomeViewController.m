@@ -54,6 +54,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
         _addPostButton.hidden = YES;
         _logOutButton.hidden = YES;
     }
+    [_tableView reloadData];
 
 }
 

@@ -25,6 +25,7 @@ static NSString *const CELL_ID = @"ComentCellView";
      [_tableView registerNib:[UINib nibWithNibName:@"ComentCellView" bundle:nil] forCellReuseIdentifier:CELL_ID];
     _requester = [[Requester alloc]init];
     _requester.delegate = self;
+    self.title = NSLocalizedString(@"Coments", nil);
     // Do any additional setup after loading the view.
 }
 
@@ -117,8 +118,9 @@ static NSString *const CELL_ID = @"ComentCellView";
         [_tableView reloadData];
     }
     else {
-        _tempComent = nil;
+        //todo error
     }
+    _tempComent = nil;
 }
 
 @end

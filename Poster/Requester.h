@@ -25,6 +25,7 @@
 - (void)comentMaked:(BOOL) yes;
 - (void)postCreated:(BOOL) yes;
 - (void)imageSetted:(NSString*)imageUrl;
+- (void)cometsFetched:(NSMutableArray*)coments;
 
 @end
 
@@ -43,6 +44,7 @@
 - (void)makePost:(Post*)post;
 + (UIImage *) getImageFromURL:(NSString *)fileURL;
 - (void)setImage:(NSString*)imageUrl toUser:(User*)user;
+- (void)getComentsForPostWithId:(int)postId;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

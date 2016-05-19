@@ -1,7 +1,7 @@
 "wrong_cred" = "Wrong username or password";
 "wrong_reg_input" = "Wrong data";
 "user_exist_error" = "User with this email exist";
-"user_successfully_register" = "User successfully registrated";
+"user_successfully_register" = "User successfully registrated, to activate account check your email.";
 "user_unsuccessfully_register" = "Somethig went wrong";
 "password_sent_error" = "Somethig went wrong";
 "password_sent" = "Pasword sent to your email";
@@ -26,3 +26,4 @@
 "make_post_button" = "Create post";
 "make_post_title" = "Create post";
 "make_post_hint" = "Your post text";
+"coments" = "Coments";

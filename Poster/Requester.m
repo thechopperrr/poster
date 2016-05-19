@@ -86,7 +86,11 @@
     [self sendGetRequest:fullPath];
 }
 
-
+- (void)getComentsForPostWithId:(int)postId{
+    NSString* path = [URLHelper pathForResource:ResourceTypeGetComents];
+    NSString *fullPath = [NSString stringWithFormat:@"%@?postId=%d", path, postId];
+    [self sendGetRequest:fullPath];
+}
 
 -(void)createRequest: (NSString*)value andPath:(NSString*) path json:(bool)yes
 {
@@ -180,6 +184,12 @@
     if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeNewImage]].location != NSNotFound){
         //todo check for error ... 404 etc
         [_delegate imageSetted:responseString];
+    }
+    
+    if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeGetComents]].location != NSNotFound){
+        //todo check for error ... 404 etc
+       // [_delegate imageSetted:responseString];
+       // get coments
     }
 
     
