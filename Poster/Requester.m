@@ -99,7 +99,7 @@
     // Specify that it will be a POST request
     
     request.HTTPMethod = @"POST";
-    NSData *postData = [value dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSData *postData = [value dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
     if(yes)
@@ -181,6 +181,14 @@
         else
             [_delegate postCreated:NO];
     }
+    
+    if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeChangePass]].location != NSNotFound){
+        if([responseString isEqualToString:@"YES"])
+            [_delegate passChangetSuccessfully:YES];
+        else
+            [_delegate passChangetSuccessfully:NO];
+    }
+
     if ([url rangeOfString:[URLHelper pathForResource:ResourceTypeNewImage]].location != NSNotFound){
         //todo check for error ... 404 etc
         [_delegate imageSetted:responseString];
@@ -224,6 +232,12 @@
     if( ! result)
         return [UIImage imageNamed:@"profile"];
     return result;
+}
+
+- (void)changePassForUser:(User*)user andNewPass:(NSString*)pass{
+    NSString* jsonUser =[NSString stringWithFormat:@"{\"mail\":\"%@\",\"pass\":\"%@\",\"imageUrl\":\"%@\"}", user.email, pass, user.imageUrl];
+    NSString* path = [URLHelper pathForResource:ResourceTypeChangePass];
+    [self createRequest:jsonUser andPath:path json:YES];
 }
 
 @end

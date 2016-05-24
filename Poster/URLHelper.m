@@ -48,6 +48,9 @@
         case ResourceTypeGetComents:
             return @"http://localhost:8080/RestApi/auth/getComents";
             break;
+        case ResourceTypeChangePass:
+            return @"http://localhost:8080/RestApi/auth/changePass";
+            break;
             
         default:
             return Nil;

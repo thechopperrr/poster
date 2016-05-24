@@ -26,6 +26,7 @@
 - (void)postCreated:(BOOL) yes;
 - (void)imageSetted:(NSString*)imageUrl;
 - (void)cometsFetched:(NSMutableArray*)coments;
+- (void)passChangetSuccessfully:(BOOL)yes;
 
 @end
 
@@ -45,6 +46,7 @@
 + (UIImage *) getImageFromURL:(NSString *)fileURL;
 - (void)setImage:(NSString*)imageUrl toUser:(User*)user;
 - (void)getComentsForPostWithId:(int)postId;
+- (void)changePassForUser:(User*)user andNewPass:(NSString*)pass;
 
 @property(nonatomic,assign)id<RequesterDelegate>delegate;
 

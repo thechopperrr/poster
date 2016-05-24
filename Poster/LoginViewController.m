@@ -85,7 +85,7 @@
 // delegates
 
 - (void)userVerifiedFetched:(User*)usr{
-    NSLog(@"email: %@", usr.email);
+    NSLog(@"login user with email: %@", usr.email);
     
     if(usr.email && ![usr.email isEqual:[NSNull null]]){
         [UserInfo setUser:usr];

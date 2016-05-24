@@ -14,6 +14,8 @@
     _email.placeholder = NSLocalizedString(@"mail_hint", nil);
     _password.placeholder = NSLocalizedString(@"pass_hint", nil);
     _passAgain.placeholder = NSLocalizedString(@"pass_hint_2", nil);
+    [_regButton setTitle:NSLocalizedString(@"register", nil) forState:UIControlStateNormal];
+    self.title = NSLocalizedString(@"register", nil);
 
 }
 

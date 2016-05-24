@@ -7,6 +7,7 @@
 //
 
 #import "CreatePostViewController.h"
+#import "UserInfo.h"
 
 @interface CreatePostViewController ()
 
@@ -41,9 +42,9 @@
 - (IBAction)createButtonPressed:(id)sender {
     _tempPost = [[Post alloc]init];
     _tempPost.postText = _postTextView.text;
+    _tempPost.date = [NSDate date];
     User* usr = [[User alloc]init];
-    usr.email = [[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"];
-    usr.pass = [[NSUserDefaults standardUserDefaults] objectForKey:@"userPass"];
+    usr = [UserInfo getUser];
     _tempPost.user = usr;
     [_req makePost:_tempPost];
     _postTextView.text = @"";

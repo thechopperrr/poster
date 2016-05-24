@@ -51,7 +51,7 @@
 }
 - (IBAction)savePassButtonPressed:(id)sender {
     if([_passAgainTextField.text isEqualToString:_passTextField.text] && (_passTextField.text.length > MIN_PASS_SIZE)){
-        
+        [_requester changePassForUser:[UserInfo getUser] andNewPass:_passTextField.text];
     }
     else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"wrong_pass_change", nil)
@@ -97,6 +97,26 @@
     _user.imageUrl = imageUrl;
     [UserInfo setUser:_user];
     [self setUp];
+}
+
+- (void)passChangetSuccessfully:(BOOL)yes{
+    if(yes){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"pass_changed", nil)
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"password_sent_error", nil)
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
 }
 /*
 #pragma mark - Navigation

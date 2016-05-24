@@ -27,3 +27,5 @@
 "make_post_title" = "Create post";
 "make_post_hint" = "Your post text";
 "coments" = "Coments";
+"pass_changed" = "Password changed!";
+"register" = "Register";

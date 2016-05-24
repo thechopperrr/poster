@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, ResourceType) {
     ResourceTypeMakePost,
     ResourceTypeNewImage,
     ResourceTypeGetComents,
+    ResourceTypeChangePass,
 };
 
 + (NSString*)pathForResource:(ResourceType) type;
