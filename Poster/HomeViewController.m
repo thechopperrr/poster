@@ -29,6 +29,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
     _requester = [[Requester alloc]init];
     _requester.delegate = self;
     [_requester getNextFive:0];
+    [self readdSpinnerView];
     _loading = YES;
     self.title = NSLocalizedString(@"poster", nil);
     
@@ -41,9 +42,13 @@ static NSString *const CELL_HEADER = @"PostCellView";
         [_posts addObject:posts[i]];
     }
     [_tableView reloadData];
+    [_spinner removeFromSuperview];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    
+    _spinner = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.center.x,self.view.center.y,50,50)];
+    _spinner.color = [UIColor blueColor];
     
     if( [UserInfo isUserLogged]){
         _addPostButton.hidden = NO;
@@ -200,11 +205,18 @@ static NSString *const CELL_HEADER = @"PostCellView";
             NSLog(@"load more rows");
             int i = (int)_posts.count;
             [_requester getNextFive:i];
+            [self readdSpinnerView];
         }
         
         
     }
 }
+
+- (void)readdSpinnerView{
+    [_spinner startAnimating];
+    [self.view addSubview:_spinner];
+}
+
 - (IBAction)addPostButtonPressed:(id)sender {
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
@@ -245,5 +257,6 @@ static NSString *const CELL_HEADER = @"PostCellView";
         
         [self presentViewController:activityVC animated:YES completion:nil];
 }
+
 
 @end

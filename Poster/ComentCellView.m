@@ -20,6 +20,11 @@
     [self.comentTextView setText:_coment.comentText];
     [self.userLabel setText:_coment.userMail];
     [self.dateLabel setText:_coment.date.description];
+    
+    self.layer.cornerRadius = 5;
+    self.layer.masksToBounds = YES;
+    self.layer.borderColor = [UIColor blueColor].CGColor;
+    self.layer.borderWidth = 2.0f;
 
 }
 

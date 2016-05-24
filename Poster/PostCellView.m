@@ -54,7 +54,8 @@
     }
     _innerView.layer.cornerRadius = 5;
     _innerView.layer.masksToBounds = YES;
-    [_userImage setImage:[Requester getImageFromURL:_post.user.imageUrl]];
+    //todo reuse image
+   // [_userImage setImage:[Requester getImageFromURL:_post.user.imageUrl]];
     [_dateLabel setText:_post.date.description];
 }
 

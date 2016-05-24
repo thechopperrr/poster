@@ -25,6 +25,14 @@ static NSString *const CELL_ID = @"ComentCellView";
      [_tableView registerNib:[UINib nibWithNibName:@"ComentCellView" bundle:nil] forCellReuseIdentifier:CELL_ID];
     _requester = [[Requester alloc]init];
     _requester.delegate = self;
+    
+    _comentTextView.layer.cornerRadius = 5;
+    _comentTextView.layer.masksToBounds = YES;
+    _comentTextView.layer.borderColor = [UIColor blueColor].CGColor;
+    _comentTextView.layer.borderWidth = 2.0f;
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     self.title = NSLocalizedString(@"Coments", nil);
     // Do any additional setup after loading the view.
 }

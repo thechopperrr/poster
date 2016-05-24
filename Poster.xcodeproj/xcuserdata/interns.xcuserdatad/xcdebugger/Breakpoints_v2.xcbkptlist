@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Poster/HomeViewController.m"
-            timestampString = "485093185.572589"
+            timestampString = "485781781.782541"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-sharePost:"
             landmarkType = "5">
          </BreakpointContent>

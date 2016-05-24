@@ -18,6 +18,7 @@
 @property Requester* requester;
 @property (weak, nonatomic) IBOutlet UIButton *addPostButton;
 @property (weak, nonatomic) IBOutlet UIButton *logOutButton;
+@property UIActivityIndicatorView *spinner;
 
 
 @end
