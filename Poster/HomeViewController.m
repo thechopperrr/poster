@@ -21,6 +21,9 @@ static NSString *const CELL_HEADER = @"PostCellView";
 
 - (void)viewDidLoad {
     
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"refresh", nil) style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
+    self.navigationItem.rightBarButtonItem = refreshButton;
+    
     _posts = [[NSMutableArray alloc]init];
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
@@ -36,6 +39,12 @@ static NSString *const CELL_HEADER = @"PostCellView";
     // Do any additional setup after loading the view.
 }
 
+- (void)refresh{
+    _posts = [[NSMutableArray alloc]init];
+    [_tableView reloadData];
+    [_requester getNextFive:0];
+}
+
 - (void)nextFiveFetched:(NSArray *)posts{
     _loading = NO;
     for(int i =0; i<posts.count; i++){
@@ -48,6 +57,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
 - (void)viewDidAppear:(BOOL)animated{
     
     _spinner = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.center.x,self.view.center.y,50,50)];
+    _spinner.center = self.view.center;
     _spinner.color = [UIColor blueColor];
     
     if( [UserInfo isUserLogged]){
