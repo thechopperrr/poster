@@ -11,7 +11,6 @@
 @implementation Coment
 
 - (NSString*)getStringDate{
-    //todo fix date format, server dont reconize this
     long date = ([self.date timeIntervalSinceReferenceDate] * 1000);
     return [NSString stringWithFormat:@"%ld", date];
 }

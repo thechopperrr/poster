@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 #import "Requester.h"
 #import "UserInfo.h"
+#import <Foundation/NSTextCheckingResult.h>
+
 #define MIN_PASS_SIZE 3
 
 @interface SettingsViewController ()
@@ -37,12 +39,23 @@
     [_logOutButton setTitle:NSLocalizedString(@"log_out", nil) forState:UIControlStateNormal];
     
     if(_user.imageUrl){
-        [_imageView setImage:[Requester getImageFromURL:_user.imageUrl]];
+        [_imageView setImage:[_requester getImageFromURL:_user.imageUrl]];
     }
     else {
         [_imageView setImage:[UIImage imageNamed:@"profile"]];
     }
 
+}
+
+- (void)imageDounloadingFailed{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"image_downloading_fails", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +85,11 @@
 }
 
 - (IBAction)saveImageButtonPressed:(id)sender {
-    if([self isUrl:_imageTextField.text]){
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:_imageTextField.text]];
+    UIImage* image =  [UIImage imageWithData:data];
+    
+    
+    if([self isUrlImage:_imageTextField.text] && image){
         [_requester setImage:_imageTextField.text toUser:[UserInfo getUser]];
     }
     else{
@@ -88,9 +105,14 @@
     }
 }
 
-- (BOOL)isUrl:(NSString*)text{
-    //todo make it 
+- (BOOL)isUrlImage:(NSString*)text{
     return YES;
+    NSString *urlRegEx =
+    @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
+    NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", urlRegEx];
+    bool isUrl =  [urlTest evaluateWithObject:text];
+    
+    return isUrl;
 }
 
 - (void)imageSetted:(NSString *)imageUrl{

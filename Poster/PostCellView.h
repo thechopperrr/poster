@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 #import "Requester.h"
+#import "ImageStorage.h"
 
 @protocol PostCellViewProtocol <NSObject>
 

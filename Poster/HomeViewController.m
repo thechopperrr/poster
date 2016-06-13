@@ -21,6 +21,10 @@ static NSString *const CELL_HEADER = @"PostCellView";
 
 - (void)viewDidLoad {
     
+    _spinner = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.center.x,self.view.center.y,50,50)];
+    _spinner.center = self.view.center;
+    _spinner.color = [UIColor blueColor];
+    
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"refresh", nil) style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
     self.navigationItem.rightBarButtonItem = refreshButton;
     
@@ -43,6 +47,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
     _posts = [[NSMutableArray alloc]init];
     [_tableView reloadData];
     [_requester getNextFive:0];
+    [self readdSpinnerView];
 }
 
 - (void)nextFiveFetched:(NSArray *)posts{
@@ -51,14 +56,10 @@ static NSString *const CELL_HEADER = @"PostCellView";
         [_posts addObject:posts[i]];
     }
     [_tableView reloadData];
-    [_spinner removeFromSuperview];
+    [_spinner stopAnimating];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
-    
-    _spinner = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.center.x,self.view.center.y,50,50)];
-    _spinner.center = self.view.center;
-    _spinner.color = [UIColor blueColor];
     
     if( [UserInfo isUserLogged]){
         _addPostButton.hidden = NO;

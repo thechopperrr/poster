@@ -8,6 +8,7 @@
 
 #import "Requester.h"
 #import "Serialization.h"
+#import "ImageStorage.h"
 
 
 
@@ -15,7 +16,6 @@
 @implementation Requester
 
 - (void)makePost:(Post *)post{
-    //todo add date
     NSString* jsonUser =[ NSString stringWithFormat: @"{\"user\":{\"mail\":\"%@\",\"pass\":\"%@\"}, \"postText\":\"%@\",\"likes\":[],\"postDate\":%d, \"coments\":[],\"postId\":0}",post.user.email, post.user.pass,post.postText,0];
     NSString* path = [URLHelper pathForResource:ResourceTypeMakePost];
     [self createRequest:jsonUser andPath:path json:YES];
@@ -123,6 +123,7 @@
     NSString* url = [myURL absoluteString];
     NSString *responseString = [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
     
+    
     //user verification
     
     if([url isEqualToString:[URLHelper pathForResource:ResourceTypeUserValication]]){
@@ -215,6 +216,11 @@
     // Furthermore, this method is called each time there is a redirect so reinitializing it
     // also serves to clear it
     _responseData = [[NSMutableData alloc] init];
+    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
+    int code = [httpResponse statusCode];
+    if(code > 300){
+        [_delegate requestWithError:httpResponse];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
@@ -223,14 +229,22 @@
     
 }
 
-+ (UIImage *) getImageFromURL:(NSString *)fileURL {
-    UIImage * result;
+- (UIImage *) getImageFromURL:(NSString *)fileURL {
+    
+    NSArray* pathArray = [fileURL componentsSeparatedByString: @"/"];
+    
+    UIImage * result = [ImageStorage readImageWithFileName:pathArray[pathArray.count - 1]];
+    if(result)
+        return result;
     
     NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
     result = [UIImage imageWithData:data];
     
-    if( ! result)
+    if( ! result) {
+        [_delegate imageDounloadingFailed];
         return [UIImage imageNamed:@"profile"];
+    }
+    [ImageStorage writeImage:result withFileName:pathArray[pathArray.count - 1]];
     return result;
 }
 

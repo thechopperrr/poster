@@ -30,3 +30,4 @@
 "pass_changed" = "Password changed!";
 "register" = "Register";
 "refresh" = "Refresh";
+"image_downloading_fails" = "Downloading image fails, bad url or connection";

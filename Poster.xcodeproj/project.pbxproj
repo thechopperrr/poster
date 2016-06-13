@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		681354F61CF5901D009AF024 /* ImageStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 681354F51CF5901D009AF024 /* ImageStorage.m */; };
 		682C463B1CBAF12C00352D3E /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C463A1CBAF12C00352D3E /* CreatePostViewController.m */; };
 		682C46521CBE657A00352D3E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C46511CBE657A00352D3E /* UserInfo.m */; };
 		684EAB391CCA65AA001EFA07 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684EAB381CCA65AA001EFA07 /* SettingsViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		681354F41CF5901D009AF024 /* ImageStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageStorage.h; sourceTree = "<group>"; };
+		681354F51CF5901D009AF024 /* ImageStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageStorage.m; sourceTree = "<group>"; };
 		682C46391CBAF12C00352D3E /* CreatePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
 		682C463A1CBAF12C00352D3E /* CreatePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
 		682C46501CBE657A00352D3E /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				682C46511CBE657A00352D3E /* UserInfo.m */,
 				6873B9561CA91DB0006AEFD4 /* Serialization.h */,
 				6873B9571CA91DB0006AEFD4 /* Serialization.m */,
+				681354F41CF5901D009AF024 /* ImageStorage.h */,
+				681354F51CF5901D009AF024 /* ImageStorage.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			files = (
 				68DF66331C99A25900245D56 /* ComentsViewController.m in Sources */,
 				682C46521CBE657A00352D3E /* UserInfo.m in Sources */,
+				681354F61CF5901D009AF024 /* ImageStorage.m in Sources */,
 				68E9BAE01C956D0A00042DFD /* Poster.xcdatamodeld in Sources */,
 				684EAB391CCA65AA001EFA07 /* SettingsViewController.m in Sources */,
 				68DF662D1C9804C300245D56 /* Coment.m in Sources */,

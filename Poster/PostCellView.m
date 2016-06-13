@@ -54,8 +54,7 @@
     }
     _innerView.layer.cornerRadius = 5;
     _innerView.layer.masksToBounds = YES;
-    //todo reuse image
-   // [_userImage setImage:[Requester getImageFromURL:_post.user.imageUrl]];
+    [_userImage setImage:[_requester getImageFromURL:_post.user.imageUrl]];
     [_dateLabel setText:_post.date.description];
 }
 
@@ -87,6 +86,10 @@
         [alert show];
         
     }
+}
+
+- (void)imageDounloadingFailed{
+    
 }
 
 - (IBAction)shareButtonPressed:(id)sender {

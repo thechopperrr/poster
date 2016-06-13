@@ -15,6 +15,7 @@
 
 @protocol RequesterDelegate <NSObject>
 
+@optional
 -(void)userVerifiedFetched:(User*) usr;
 -(void)registrationWitStatus:(BOOL) yes;
 -(void)isSuchUserFetched:(BOOL) yes;
@@ -27,6 +28,10 @@
 - (void)imageSetted:(NSString*)imageUrl;
 - (void)cometsFetched:(NSMutableArray*)coments;
 - (void)passChangetSuccessfully:(BOOL)yes;
+- (void)imageDounloadingFailed;
+
+@required
+- (void)requestWithError:(NSHTTPURLResponse*)responce;
 
 @end
 
@@ -43,7 +48,7 @@
 - (void)disLikePostWithId:(long)postId andUser:(NSString*)user;
 - (void)makeComent:(Coment*)coment;
 - (void)makePost:(Post*)post;
-+ (UIImage *) getImageFromURL:(NSString *)fileURL;
+- (UIImage *) getImageFromURL:(NSString *)fileURL;
 - (void)setImage:(NSString*)imageUrl toUser:(User*)user;
 - (void)getComentsForPostWithId:(int)postId;
 - (void)changePassForUser:(User*)user andNewPass:(NSString*)pass;
