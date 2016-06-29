@@ -11,6 +11,8 @@
 #import "CreatePostViewController.h"
 #import "SettingsViewController.h"
 
+
+
 @interface HomeViewController ()
 
 @end
@@ -31,7 +33,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
     _posts = [[NSMutableArray alloc]init];
     [super viewDidLoad];
     [_tableView registerNib:[UINib nibWithNibName:@"PostCellView" bundle:nil] forCellReuseIdentifier:CELL_HEADER];
-    [_logOutButton setTitle:NSLocalizedString(@"settings", nil) forState:UIControlStateNormal];
+    [_settingsButton setTitle:NSLocalizedString(@"settings", nil) forState:UIControlStateNormal];
     
     _requester = [[Requester alloc]init];
     _requester.delegate = self;
@@ -41,6 +43,10 @@ static NSString *const CELL_HEADER = @"PostCellView";
     self.title = NSLocalizedString(@"poster", nil);
     
     // Do any additional setup after loading the view.
+}
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    
 }
 
 - (void)refresh{
@@ -61,16 +67,18 @@ static NSString *const CELL_HEADER = @"PostCellView";
 
 - (void)viewDidAppear:(BOOL)animated{
     
+    [self refresh];
+    
     if( [UserInfo isUserLogged]){
         _addPostButton.hidden = NO;
-        _logOutButton.hidden = NO;
+        _settingsButton.hidden = NO;
         self.navigationItem.hidesBackButton = YES;
     }
     else {
         _addPostButton.hidden = YES;
-        _logOutButton.hidden = YES;
+        _settingsButton.hidden = YES;
     }
-    [_tableView reloadData];
+    //[_tableView reloadData];
 
 }
 
@@ -163,6 +171,12 @@ static NSString *const CELL_HEADER = @"PostCellView";
     postCell.selectionStyle = UITableViewCellSelectionStyleNone;
     postCell.delegate = self;
     postCell.post = post;
+    if( ! post.likes){
+        post.likes = [[NSMutableArray alloc]init];
+    }
+    if( ! post.coments){
+        post.coments = [[NSMutableArray alloc]init];
+    }
     return postCell;
 }
 
@@ -202,12 +216,6 @@ static NSString *const CELL_HEADER = @"PostCellView";
     UIEdgeInsets inset = aScrollView.contentInset;
     float y = offset.y + bounds.size.height - inset.bottom;
     float h = size.height;
-    // NSLog(@"offset: %f", offset.y);
-    // NSLog(@"content.height: %f", size.height);
-    // NSLog(@"bounds.height: %f", bounds.size.height);
-    // NSLog(@"inset.top: %f", inset.top);
-    // NSLog(@"inset.bottom: %f", inset.bottom);
-    // NSLog(@"pos: %f of %f", y, h);
     
     float reload_distance = 10;
     if(y > h + reload_distance) {
@@ -236,7 +244,7 @@ static NSString *const CELL_HEADER = @"PostCellView";
     [self.navigationController pushViewController:controller animated:YES];
 
 }
-- (IBAction)logOutButtonPressed:(id)sender {
+- (IBAction)settignsButtonPressed:(id)sender {
 //    [UserInfo logOut];
 //    [self.navigationController popViewControllerAnimated:YES];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];

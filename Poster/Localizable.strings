@@ -9,7 +9,7 @@
 "enter_coment_big_or_small_text" = "Text isn't in write size";
 "pls_login" = "Pleace login";
 "mail_hint" = "email";
-"pass_hint" = "pass";
+"pass_hint" = "password";
 "login_title" = "LOGIN";
 "pass_hint_2" = "password again";
 "network_or_server_error" = "Network or server error.";
@@ -31,3 +31,6 @@
 "register" = "Register";
 "refresh" = "Refresh";
 "image_downloading_fails" = "Downloading image fails, bad url or connection";
+"pass_hint_new" = "New password";
+"too_much_simbols" = "Too much simbols, max number is 200.";
+"post_short" = "Post can not be lower than 10 simbols";

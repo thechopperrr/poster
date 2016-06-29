@@ -63,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)savePassButtonPressed:(id)sender {
-    if([_passAgainTextField.text isEqualToString:_passTextField.text] && (_passTextField.text.length > MIN_PASS_SIZE)){
+    if([_passAgainTextField.text isEqualToString:_passTextField.text] && (_passTextField.text.length > MIN_PASS_SIZE) && (_passTextField.text.length < 45)){
         [_requester changePassForUser:[UserInfo getUser] andNewPass:_passTextField.text];
     }
     else{

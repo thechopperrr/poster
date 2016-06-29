@@ -13,7 +13,6 @@
 @interface ComentsViewController ()
 
 
-
 @end
 
 @implementation ComentsViewController
@@ -42,7 +41,7 @@ static NSString *const CELL_ID = @"ComentCellView";
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)maceComent:(id)sender {
+- (IBAction)makeComent:(id)sender {
     if(_comentTextView.text.length > COMENT_LENGHT || _comentTextView.text.length < 1){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"enter_coment_big_or_small_text", nil)
                                                         message:nil

@@ -15,4 +15,6 @@
     return [NSString stringWithFormat:@"%ld", date];
 }
 
+
+// todo да направя ограничение на броя на символите в пост
 @end

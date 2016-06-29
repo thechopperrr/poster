@@ -21,7 +21,7 @@
 
 - (IBAction)regButtonPressed:(id)sender {
     //todo: filter
-    if(_email.text.length < 1 || _password.text.length < 1 || ![_password.text isEqualToString:_passAgain.text] ){
+    if(! [self NSStringIsValidEmail:_email.text] || _password.text.length < 1 || _password.text.length > 45 || ![_password.text isEqualToString:_passAgain.text] ){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"wrong_reg_input", nil)
                                                         message:nil
                                                        delegate:nil
@@ -39,6 +39,20 @@
         [req isSuchUser:user];
 
     }
+}
+
+-(BOOL) NSStringIsValidEmail:(NSString *)checkString
+{
+    if(checkString.length < 3 || checkString.length > 45)
+    {
+        return NO;
+    }
+    BOOL stricterFilter = NO;
+    NSString *stricterFilterString = @"^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$";
+    NSString *laxString = @"^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$";
+    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:checkString];
 }
 
 - (void)isSuchUserFetched:(BOOL)yes{

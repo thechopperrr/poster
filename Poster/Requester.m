@@ -223,6 +223,7 @@
     }
 }
 
+// todo timeout request
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
     [_responseData appendData:data];

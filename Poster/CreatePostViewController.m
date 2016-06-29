@@ -9,6 +9,8 @@
 #import "CreatePostViewController.h"
 #import "UserInfo.h"
 
+#define MAX_POST_SIZE 200
+
 @interface CreatePostViewController ()
 
 @end
@@ -40,6 +42,26 @@
 }
 
 - (IBAction)createButtonPressed:(id)sender {
+    
+    if(_postTextView.text.length > MAX_POST_SIZE){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"too_much_simbols", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    if(_postTextView.text.length < 10){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"post_short", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     _tempPost = [[Post alloc]init];
     _tempPost.postText = _postTextView.text;
     _tempPost.date = [NSDate date];
@@ -64,6 +86,8 @@
         [alert show];
 
     }
+
 }
 
+// todo да определя броя на символите в поста и да едитна в документацията
 @end

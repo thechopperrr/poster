@@ -17,7 +17,7 @@
 @property bool loading;
 @property Requester* requester;
 @property (weak, nonatomic) IBOutlet UIButton *addPostButton;
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
+@property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property UIActivityIndicatorView *spinner;
 
 
