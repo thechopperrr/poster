@@ -114,6 +114,9 @@
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    [_delegate requestWithError:nil];
+}
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received

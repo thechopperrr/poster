@@ -11,6 +11,7 @@
 		682C463B1CBAF12C00352D3E /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C463A1CBAF12C00352D3E /* CreatePostViewController.m */; };
 		682C46521CBE657A00352D3E /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 682C46511CBE657A00352D3E /* UserInfo.m */; };
 		684EAB391CCA65AA001EFA07 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 684EAB381CCA65AA001EFA07 /* SettingsViewController.m */; };
+		684EE5EA1D2BC195000D1FFE /* CharChecher.m in Sources */ = {isa = PBXBuildFile; fileRef = 684EE5E91D2BC194000D1FFE /* CharChecher.m */; };
 		6873B92E1C9DAD51006AEFD4 /* ComentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */; };
 		6873B92F1C9DAD51006AEFD4 /* ComentCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */; };
 		6873B94D1CA3D7A0006AEFD4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6873B94C1CA3D7A0006AEFD4 /* RegisterViewController.m */; };
@@ -43,6 +44,8 @@
 		682C46511CBE657A00352D3E /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		684EAB371CCA65AA001EFA07 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		684EAB381CCA65AA001EFA07 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		684EE5E81D2BC194000D1FFE /* CharChecher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharChecher.h; sourceTree = "<group>"; };
+		684EE5E91D2BC194000D1FFE /* CharChecher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharChecher.m; sourceTree = "<group>"; };
 		6873B92B1C9DAD51006AEFD4 /* ComentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComentCellView.h; sourceTree = "<group>"; };
 		6873B92C1C9DAD51006AEFD4 /* ComentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComentCellView.m; sourceTree = "<group>"; };
 		6873B92D1C9DAD51006AEFD4 /* ComentCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComentCellView.xib; sourceTree = "<group>"; };
@@ -157,6 +160,8 @@
 				68DF66321C99A25900245D56 /* ComentsViewController.m */,
 				6873B94E1CA425E8006AEFD4 /* Requester.h */,
 				6873B94F1CA425E8006AEFD4 /* Requester.m */,
+				684EE5E81D2BC194000D1FFE /* CharChecher.h */,
+				684EE5E91D2BC194000D1FFE /* CharChecher.m */,
 				689C77921C95704300BC0D26 /* HomeViewController.h */,
 				689C77931C95704300BC0D26 /* HomeViewController.m */,
 				68E9BAD81C956D0A00042DFD /* LoginViewController.h */,
@@ -255,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684EE5EA1D2BC195000D1FFE /* CharChecher.m in Sources */,
 				68DF66331C99A25900245D56 /* ComentsViewController.m in Sources */,
 				682C46521CBE657A00352D3E /* UserInfo.m in Sources */,
 				681354F61CF5901D009AF024 /* ImageStorage.m in Sources */,

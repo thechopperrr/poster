@@ -46,7 +46,15 @@ static NSString *const CELL_HEADER = @"PostCellView";
 }
 
 - (void)requestWithError:(NSHTTPURLResponse *)responce{
+    [_spinner stopAnimating];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_error", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
     
+    [alert show];
+
 }
 
 - (void)refresh{

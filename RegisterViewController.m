@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "CharChecher.h"
 
 @implementation RegisterViewController
 
@@ -21,7 +22,7 @@
 
 - (IBAction)regButtonPressed:(id)sender {
     //todo: filter
-    if(! [self NSStringIsValidEmail:_email.text] || _password.text.length < 1 || _password.text.length > 45 || ![_password.text isEqualToString:_passAgain.text] ){
+    if(! [self NSStringIsValidEmail:_email.text] || ! [CharChecher isValidChar:_email.text] || _password.text.length < 1 || ! [CharChecher isValidChar:_password.text]|| _password.text.length > 45 || ![_password.text isEqualToString:_passAgain.text] ){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"wrong_reg_input", nil)
                                                         message:nil
                                                        delegate:nil
@@ -90,6 +91,17 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_error", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    
 }
 
 @end

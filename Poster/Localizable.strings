@@ -34,3 +34,6 @@
 "pass_hint_new" = "New password";
 "too_much_simbols" = "Too much simbols, max number is 200.";
 "post_short" = "Post can not be lower than 10 simbols";
+"server_error" = "Error on server ocures, try again later";
+"not_allowed_chars" = "Text you entered contains invalid charicters. Allowed are: a-z, A-Z, -, ., @, ?, .";
+"network_error" = "Network or server error, pleace try again later";

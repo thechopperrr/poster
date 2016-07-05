@@ -7,6 +7,7 @@
 //
 
 #import "ComentsViewController.h"
+#import "CharChecher.h"
 
 #define COMENT_LENGHT 50
 
@@ -53,6 +54,15 @@ static NSString *const CELL_ID = @"ComentCellView";
     }
     if( ! [[NSUserDefaults standardUserDefaults] objectForKey:@"userEmail"]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"pls_login", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    if( ! [CharChecher isValidChar:_comentTextView.text]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"not_allowed_chars", nil)
                                                         message:nil
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
@@ -128,6 +138,17 @@ static NSString *const CELL_ID = @"ComentCellView";
         //todo error
     }
     _tempComent = nil;
+}
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_error", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    
 }
 
 @end

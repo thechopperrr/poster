@@ -132,4 +132,13 @@
         //todo error
     }
 }
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"server_error", nil)
+                                                    message:nil
+                                                   delegate:self
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 @end

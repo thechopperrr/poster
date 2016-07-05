@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
 #import "Requester.h"
+#import "CharChecher.h"
 
 @interface LoginViewController : UIViewController<RequesterDelegate>
 

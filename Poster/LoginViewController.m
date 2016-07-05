@@ -40,6 +40,17 @@
 }
 
 - (IBAction)loginButtonPressed:(id)sender {
+    if( ! [CharChecher isValidChar:_nameTextField.text] || ! [CharChecher isValidChar:_passTextField.text]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"wrong_reg_input", nil)
+                                                        message:nil
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+        return;
+
+    }
     //check for empty fields
     User* user = [[User alloc]init];
     user.email = _nameTextField.text;
@@ -57,7 +68,7 @@
 }
 
 - (IBAction)forgetButtonPressed:(id)sender {
-    if(_nameTextField.text.length < 1 ){
+    if(_nameTextField.text.length < 1 || ! [CharChecher isValidChar:_nameTextField.text]){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"wrong_reg_input", nil)
                                                         message:nil
                                                        delegate:nil
@@ -142,6 +153,17 @@
                                           otherButtonTitles:nil];
     
     [alert show];
+}
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_error", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    
 }
 
 @end

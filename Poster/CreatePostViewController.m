@@ -8,6 +8,7 @@
 
 #import "CreatePostViewController.h"
 #import "UserInfo.h"
+#import "CharChecher.h"
 
 #define MAX_POST_SIZE 200
 
@@ -61,6 +62,16 @@
         [alert show];
         return;
     }
+    if( ! [CharChecher isValidChar:_postTextView.text]){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"not_allowed_chars", nil)
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+
     
     _tempPost = [[Post alloc]init];
     _tempPost.postText = _postTextView.text;
@@ -87,6 +98,17 @@
 
     }
 
+}
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_error", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    
 }
 
 // todo да определя броя на символите в поста и да едитна в документацията

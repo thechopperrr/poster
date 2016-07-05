@@ -10,6 +10,7 @@
 #import "Requester.h"
 #import "UserInfo.h"
 #import <Foundation/NSTextCheckingResult.h>
+#import "CharChecher.h"
 
 #define MIN_PASS_SIZE 3
 
@@ -63,7 +64,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)savePassButtonPressed:(id)sender {
-    if([_passAgainTextField.text isEqualToString:_passTextField.text] && (_passTextField.text.length > MIN_PASS_SIZE) && (_passTextField.text.length < 45)){
+    if([_passAgainTextField.text isEqualToString:_passTextField.text]  && [CharChecher isValidChar:_passTextField.text] && (_passTextField.text.length > MIN_PASS_SIZE) && (_passTextField.text.length < 45)){
         [_requester changePassForUser:[UserInfo getUser] andNewPass:_passTextField.text];
     }
     else{
@@ -139,6 +140,17 @@
         [alert show];
         
     }
+}
+
+- (void)requestWithError:(NSHTTPURLResponse *)responce{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"network_error", nil)
+                                                    message:nil
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+    
 }
 /*
 #pragma mark - Navigation
