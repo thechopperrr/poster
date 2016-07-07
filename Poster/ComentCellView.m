@@ -19,7 +19,10 @@
     [super layoutSubviews];
     [self.comentTextView setText:_coment.comentText];
     [self.userLabel setText:_coment.userMail];
-    [self.dateLabel setText:_coment.date.description];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MMM-dd HH:mm"];
+    NSString *stringFromDate = [formatter stringFromDate:_coment.date];
+    [self.dateLabel setText:stringFromDate];
     
     self.layer.cornerRadius = 5;
     self.layer.masksToBounds = YES;

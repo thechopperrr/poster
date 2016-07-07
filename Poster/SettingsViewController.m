@@ -39,7 +39,7 @@
     [_savePass setTitle:NSLocalizedString(@"change_pass", nil) forState:UIControlStateNormal];
     [_logOutButton setTitle:NSLocalizedString(@"log_out", nil) forState:UIControlStateNormal];
     
-    if(_user.imageUrl){
+    if(_user.imageUrl && ![_user.imageUrl isEqualToString:@"(null)"]){
         [_imageView setImage:[_requester getImageFromURL:_user.imageUrl]];
     }
     else {

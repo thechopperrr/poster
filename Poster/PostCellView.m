@@ -55,7 +55,10 @@
     _innerView.layer.cornerRadius = 5;
     _innerView.layer.masksToBounds = YES;
     [_userImage setImage:[_requester getImageFromURL:_post.user.imageUrl]];
-    [_dateLabel setText:_post.date.description];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MMM-dd HH:mm"];
+    NSString *stringFromDate = [formatter stringFromDate:_post.date];
+    [_dateLabel setText:stringFromDate];
 }
 
 - (IBAction)likeButtonPressed:(id)sender {
